@@ -15,7 +15,7 @@ export const PasswordGate: React.FC<PasswordGateProps> = ({ onSuccess }) => {
     e.preventDefault();
     const correctPassword = getAccessPassword();
 
-    if (password.trim() === correctPassword) {
+    if (password.trim().toLowerCase() === correctPassword.trim().toLowerCase()) {
       setHasError(false);
       onSuccess();
     } else {
