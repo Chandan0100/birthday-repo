@@ -1,14 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Activity, ShieldCheck, Cpu, ArrowRight, AlertCircle } from 'lucide-react';
-import { BIRTHDAY_CONFIG } from '../config/birthdayData';
+import content from '../content';
 
 interface CtoSystemStatusProps {
   onNext: () => void;
 }
 
 export const CtoSystemStatus: React.FC<CtoSystemStatusProps> = ({ onNext }) => {
-  const { systemMetrics, systemStatusNote } = BIRTHDAY_CONFIG;
+  const ctoStatus = content.ctoStatus;
+  const systemMetrics = ctoStatus.metrics;
+  const systemStatusNote = ctoStatus.systemStatusNote;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -37,13 +39,13 @@ export const CtoSystemStatus: React.FC<CtoSystemStatusProps> = ({ onNext }) => {
         <motion.div variants={itemVariants} className="text-center space-y-3">
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-zen-500/10 border border-zen-500/30 text-zen-400 font-mono text-xs">
             <Activity className="w-3.5 h-3.5" />
-            <span>REAL-TIME TELEMETRY</span>
+            <span>{ctoStatus.badge}</span>
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
-            CTO SYSTEM STATUS
+            {ctoStatus.heading}
           </h1>
           <p className="text-slate-400 font-mono text-xs sm:text-sm">
-            Core leadership metrics, runtime diagnostics & health monitoring
+            {ctoStatus.subheading}
           </p>
         </motion.div>
 
@@ -57,9 +59,9 @@ export const CtoSystemStatus: React.FC<CtoSystemStatusProps> = ({ onNext }) => {
             <div className="flex items-center justify-between pb-3 border-b border-white/5 font-mono text-xs text-slate-400">
               <div className="flex items-center space-x-2">
                 <Cpu className="w-4 h-4 text-zen-400" />
-                <span>CORE PERFORMANCE VECTORS</span>
+                <span>{ctoStatus.panelTitle}</span>
               </div>
-              <span className="text-emerald-400 font-semibold">ALL GAUGES NOMINAL</span>
+              <span className="text-emerald-400 font-semibold">{ctoStatus.panelStatus}</span>
             </div>
 
             <div className="space-y-4">
@@ -113,10 +115,10 @@ export const CtoSystemStatus: React.FC<CtoSystemStatusProps> = ({ onNext }) => {
               <div>
                 <div className="font-mono text-xl font-bold text-emerald-400 tracking-wider flex items-center justify-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 inline-block animate-pulse" />
-                  HEALTHY
+                  {ctoStatus.healthStatus}
                 </div>
                 <div className="text-[11px] font-mono text-slate-400 mt-1">
-                  UPTIME: 100% (365 DAYS/YEAR)
+                  {ctoStatus.uptime}
                 </div>
               </div>
             </div>

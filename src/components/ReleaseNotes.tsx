@@ -1,14 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { PlusCircle, TrendingUp, AlertCircle, ArrowRight, Tag, CheckCircle2 } from 'lucide-react';
-import { BIRTHDAY_CONFIG } from '../config/birthdayData';
+import content from '../content';
 
 interface ReleaseNotesProps {
   onNext: () => void;
 }
 
 export const ReleaseNotes: React.FC<ReleaseNotesProps> = ({ onNext }) => {
-  const { releaseNotes } = BIRTHDAY_CONFIG;
+  const releaseNotes = content.release;
 
   const containerVariants = {
     hidden: { opacity: 0 },

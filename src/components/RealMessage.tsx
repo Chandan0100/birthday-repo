@@ -2,14 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, ArrowRight, Check } from 'lucide-react';
 import { ZenmonkLogo } from './ZenmonkLogo';
-import { BIRTHDAY_CONFIG } from '../config/birthdayData';
+import content from '../content';
 
 interface RealMessageProps {
   onNext: () => void;
 }
 
 export const RealMessage: React.FC<RealMessageProps> = ({ onNext }) => {
-  const { realMessage } = BIRTHDAY_CONFIG;
+  const realMessage = content.finalMessage;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -93,7 +93,7 @@ export const RealMessage: React.FC<RealMessageProps> = ({ onNext }) => {
             onClick={onNext}
             className="px-8 py-4 rounded-2xl bg-gradient-to-r from-zen-500 via-orange-500 to-amber-500 hover:from-zen-400 hover:to-orange-400 text-slate-950 font-mono text-sm font-bold tracking-wider uppercase flex items-center space-x-2 transition-all shadow-xl shadow-zen-500/25 active:scale-95"
           >
-            <span>PROCEED TO CELEBRATION</span>
+            <span>{realMessage.buttonText}</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </motion.div>

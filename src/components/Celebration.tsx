@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import { ZenmonkLogo } from './ZenmonkLogo';
 import { FloatingBalloons } from './FloatingBalloons';
-import { BIRTHDAY_CONFIG } from '../config/birthdayData';
+import content from '../content';
 import {
   triggerNormal,
   triggerFancy,
@@ -156,12 +156,12 @@ export const Celebration: React.FC<CelebrationProps> = ({ onRestart }) => {
               animate={{ opacity: 1, y: 0 }}
               className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight"
             >
-              {BIRTHDAY_CONFIG.celebration.heading}
+              {content.celebration.heading}
             </motion.h1>
 
             <p className="text-emerald-400 font-mono text-sm sm:text-base flex items-center justify-center gap-2">
               <CheckCircle2 className="w-4 h-4" />
-              <span>{BIRTHDAY_CONFIG.celebration.deploymentStatusText}</span>
+              <span>{content.celebration.deploymentStatusText}</span>
             </p>
           </div>
 
@@ -174,7 +174,7 @@ export const Celebration: React.FC<CelebrationProps> = ({ onRestart }) => {
               className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-zen-500 via-orange-500 to-amber-500 hover:from-zen-400 hover:to-orange-400 text-slate-950 font-mono text-sm sm:text-base font-bold tracking-wider uppercase shadow-xl shadow-zen-500/30 flex items-center justify-center space-x-2.5 mx-auto transition-all"
             >
               <PartyPopper className="w-5 h-5 text-slate-950" />
-              <span>CELEBRATE AGAIN 🎉</span>
+              <span>{content.celebration.buttonText}</span>
               <span className="text-xs px-2 py-0.5 rounded-full bg-black/20 text-slate-900 font-mono">
                 #{celebrateCount}
               </span>
@@ -184,7 +184,7 @@ export const Celebration: React.FC<CelebrationProps> = ({ onRestart }) => {
           {/* Celebration Style Selector */}
           <div className="space-y-3 pt-2">
             <div className="text-[11px] font-mono text-slate-400 uppercase tracking-widest text-center">
-              CELEBRATION STYLES
+              {content.celebration.modesLabel}
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 max-w-xl mx-auto">
@@ -215,8 +215,8 @@ export const Celebration: React.FC<CelebrationProps> = ({ onRestart }) => {
           <div className="bg-black/40 border border-white/10 rounded-2xl p-5 font-mono text-left max-w-lg mx-auto space-y-3">
             <div className="space-y-1.5">
               <div className="flex justify-between items-center text-xs text-slate-400">
-                <span>Birthday Status</span>
-                <span className="text-emerald-400 font-bold">100% COMPLETE</span>
+                <span>{content.celebration.statusLabel}</span>
+                <span className="text-emerald-400 font-bold">{content.celebration.statusValue}</span>
               </div>
               <div className="w-full h-2 bg-slate-800 rounded-full overflow-hidden p-0.5">
                 <div className="w-full h-full bg-gradient-to-r from-zen-500 to-emerald-400 rounded-full" />
@@ -224,29 +224,29 @@ export const Celebration: React.FC<CelebrationProps> = ({ onRestart }) => {
             </div>
 
             <div className="pt-2 border-t border-white/5 flex items-center justify-between text-xs">
-              <span className="text-slate-400">Next Milestone:</span>
+              <span className="text-slate-400">{content.celebration.nextReleaseLabel}</span>
               <span className="text-zen-300 font-bold tracking-wider">
-                {BIRTHDAY_CONFIG.celebration.nextReleaseText}
+                {content.celebration.nextReleaseText}
               </span>
             </div>
 
-            {/* DDD Domain Event Easter Egg */}
+            {/* Domain Event Telemetry */}
             <div className="pt-2.5 border-t border-white/5 grid grid-cols-2 gap-2 text-[11px] text-slate-400 font-mono">
               <div>
                 <span className="text-slate-500">EVENT: </span>
-                <span className="text-emerald-400 font-semibold">{BIRTHDAY_CONFIG.celebration.domainEvent.event}</span>
+                <span className="text-emerald-400 font-semibold">{content.celebration.domainEvent.event}</span>
               </div>
               <div>
                 <span className="text-slate-500">AGGREGATE: </span>
-                <span className="text-zen-300 font-semibold">{BIRTHDAY_CONFIG.celebration.domainEvent.aggregate}</span>
+                <span className="text-zen-300 font-semibold">{content.celebration.domainEvent.aggregate}</span>
               </div>
               <div>
                 <span className="text-slate-500">COMMAND: </span>
-                <span className="text-amber-400 font-semibold">{BIRTHDAY_CONFIG.celebration.domainEvent.command}</span>
+                <span className="text-amber-400 font-semibold">{content.celebration.domainEvent.command}</span>
               </div>
               <div>
                 <span className="text-slate-500">STATUS: </span>
-                <span className="text-emerald-400 font-semibold">{BIRTHDAY_CONFIG.celebration.domainEvent.status}</span>
+                <span className="text-emerald-400 font-semibold">{content.celebration.domainEvent.status}</span>
               </div>
             </div>
           </div>
@@ -258,7 +258,7 @@ export const Celebration: React.FC<CelebrationProps> = ({ onRestart }) => {
               className="px-5 py-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-white/10 text-slate-400 hover:text-slate-200 font-mono text-xs font-semibold flex items-center space-x-2 transition-all"
             >
               <RotateCcw className="w-3.5 h-3.5" />
-              <span>REPLAY SURPRISE FROM START</span>
+              <span>{content.celebration.replaySurpriseText}</span>
             </button>
           </div>
 
@@ -266,11 +266,11 @@ export const Celebration: React.FC<CelebrationProps> = ({ onRestart }) => {
           <div className="pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-slate-400">
             <ZenmonkLogo size="sm" showWordmark={true} />
             <div className="flex items-center gap-1.5">
-              <span>Made with</span>
+              <span>{content.brand.madeWith}</span>
               <Heart className="w-3.5 h-3.5 text-zen-500 fill-current animate-pulse" />
               <span>
-                by <strong className="text-white">{BIRTHDAY_CONFIG.teamName}</strong> for{' '}
-                <strong className="text-zen-400">{BIRTHDAY_CONFIG.personName}</strong>
+                by <strong className="text-white">{content.brand.subtext}</strong> for{' '}
+                <strong className="text-zen-400">{content.person.name}</strong>
               </span>
             </div>
           </div>

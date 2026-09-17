@@ -1,7 +1,7 @@
 import React from 'react';
 import { ShieldCheck, Sparkles } from 'lucide-react';
 import { ZenmonkLogo } from './ZenmonkLogo';
-import { BIRTHDAY_CONFIG } from '../config/birthdayData';
+import content from '../content';
 
 interface HeaderProps {
   currentStage: number;
@@ -25,18 +25,18 @@ export const Header: React.FC<HeaderProps> = ({ currentStage, totalStages, onNav
   return (
     <header className="fixed top-0 left-0 right-0 z-40 bg-[#0a0d14]/85 backdrop-blur-md border-b border-white/5 px-4 lg:px-8 py-3 transition-all duration-300">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
-        {/* Left: Zenmonk Brand & Release Version */}
+        {/* Left: Brand & Release Version */}
         <div className="flex items-center space-x-3">
           <ZenmonkLogo size="sm" showWordmark={true} />
           <div className="h-4 w-[1px] bg-white/10 hidden sm:block" />
           <div className="hidden sm:flex items-center space-x-2">
             <span className="font-mono text-xs text-zen-400 font-medium">
-              {BIRTHDAY_CONFIG.releaseVersion}
+              {content.release.version}
             </span>
             <span className="text-slate-600">/</span>
             <div className="text-[10px] text-slate-400 font-mono flex items-center gap-1">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span>{BIRTHDAY_CONFIG.environment}</span>
+              <span>{content.release.environment}</span>
             </div>
           </div>
         </div>

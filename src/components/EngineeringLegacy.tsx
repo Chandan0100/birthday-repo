@@ -11,14 +11,14 @@ import {
   ArrowDown,
   Sparkles,
 } from 'lucide-react';
-import { BIRTHDAY_CONFIG } from '../config/birthdayData';
+import content from '../content';
 
 interface EngineeringLegacyProps {
   onNext: () => void;
 }
 
 export const EngineeringLegacy: React.FC<EngineeringLegacyProps> = ({ onNext }) => {
-  const { whatYouTaughtUs } = BIRTHDAY_CONFIG;
+  const whatYouTaughtUs = content.legacy;
 
   const iconMap: Record<string, React.ReactNode> = {
     Compass: <Compass className="w-5 h-5 text-zen-400" />,
@@ -156,3 +156,4 @@ export const EngineeringLegacy: React.FC<EngineeringLegacyProps> = ({ onNext }) 
     </div>
   );
 };
+

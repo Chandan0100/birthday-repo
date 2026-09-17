@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Rocket, ArrowRight, Server, Shield, Sparkles, Cpu } from 'lucide-react';
 import { ZenmonkLogo } from './ZenmonkLogo';
-import { BIRTHDAY_CONFIG } from '../config/birthdayData';
+import content from '../content';
 
 interface SecretDeploymentProps {
   onDeploy: () => void;
@@ -21,19 +21,19 @@ export const SecretDeployment: React.FC<SecretDeploymentProps> = ({ onDeploy }) 
           {/* Subtle background glow circle */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-zen-500/10 rounded-full blur-3xl pointer-events-none" />
 
-          {/* Top Tag & Zenmonk mark */}
+          {/* Top Tag & Brand mark */}
           <div className="flex items-center justify-between mb-8 pb-4 border-b border-white/10">
             <div className="flex items-center space-x-3">
               <ZenmonkLogo size="sm" showWordmark={true} />
               <span className="hidden sm:inline text-white/20">|</span>
               <div className="hidden sm:inline-flex items-center space-x-2 px-2.5 py-0.5 rounded-full bg-zen-500/10 border border-zen-500/30 text-zen-400 font-mono text-xs">
                 <Sparkles className="w-3 h-3" />
-                <span>INTERNAL PIPELINE</span>
+                <span>{content.brand.badge}</span>
               </div>
             </div>
             <div className="font-mono text-xs text-slate-500 flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-              <span>SYSTEM READY</span>
+              <span>{content.release.status.toUpperCase()}</span>
             </div>
           </div>
 
@@ -45,14 +45,13 @@ export const SecretDeployment: React.FC<SecretDeploymentProps> = ({ onDeploy }) 
               transition={{ delay: 0.2 }}
               className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight"
             >
-              A SPECIAL DEPLOYMENT <br />
+              {content.release.headline} <br />
               <span className="bg-gradient-to-r from-zen-400 via-amber-300 to-orange-500 bg-clip-text text-transparent">
-                IS READY.
+                {content.release.headlineHighlight}
               </span>
             </motion.h1>
             <p className="text-slate-400 text-sm md:text-base leading-relaxed">
-              The engineering team has finalized the custom birthday build for {BIRTHDAY_CONFIG.personName}. 
-              All automated tests have passed. Awaiting final CTO execution.
+              {content.release.description}
             </p>
           </div>
 
@@ -63,7 +62,7 @@ export const SecretDeployment: React.FC<SecretDeploymentProps> = ({ onDeploy }) 
                 RELEASE
               </div>
               <div className="font-mono text-sm sm:text-base font-semibold text-zen-300">
-                {BIRTHDAY_CONFIG.personName.toUpperCase()} {BIRTHDAY_CONFIG.releaseVersion}
+                {content.person.name.toUpperCase()} {content.release.version}
               </div>
             </div>
 
@@ -73,7 +72,7 @@ export const SecretDeployment: React.FC<SecretDeploymentProps> = ({ onDeploy }) 
               </div>
               <div className="font-mono text-sm sm:text-base font-semibold text-emerald-400 flex items-center gap-2">
                 <Server className="w-4 h-4" />
-                <span>{BIRTHDAY_CONFIG.environment}</span>
+                <span>{content.release.environment}</span>
               </div>
             </div>
 
@@ -83,7 +82,7 @@ export const SecretDeployment: React.FC<SecretDeploymentProps> = ({ onDeploy }) 
               </div>
               <div className="font-mono text-sm sm:text-base font-semibold text-white flex items-center gap-2">
                 <Cpu className="w-4 h-4 text-amber-400" />
-                <span>{BIRTHDAY_CONFIG.initiatedBy}</span>
+                <span>{content.release.initiatedBy}</span>
               </div>
             </div>
 
@@ -93,7 +92,7 @@ export const SecretDeployment: React.FC<SecretDeploymentProps> = ({ onDeploy }) 
               </div>
               <div className="font-mono text-sm sm:text-base font-semibold text-zen-400 flex items-center gap-2">
                 <Shield className="w-4 h-4 text-zen-500" />
-                <span>{BIRTHDAY_CONFIG.priority}</span>
+                <span>{content.release.priority}</span>
               </div>
             </div>
           </div>

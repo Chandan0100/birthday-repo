@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { BIRTHDAY_CONFIG } from '../config/birthdayData';
+import { ACCESS_PASSWORD } from '../config/environment';
 
 interface PasswordGateProps {
   onSuccess: () => void;
@@ -14,7 +14,7 @@ export const PasswordGate: React.FC<PasswordGateProps> = ({ onSuccess }) => {
     e.preventDefault();
     if (!password.trim()) return;
 
-    if (password.trim().toLowerCase() === BIRTHDAY_CONFIG.secretPassword.toLowerCase()) {
+    if (password.trim().toLowerCase() === ACCESS_PASSWORD.toLowerCase()) {
       setHasError(false);
       onSuccess();
     } else {

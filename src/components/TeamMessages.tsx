@@ -1,14 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Users, Quote, ArrowRight, Heart } from 'lucide-react';
-import { BIRTHDAY_CONFIG } from '../config/birthdayData';
+import content from '../content';
 
 interface TeamMessagesProps {
   onNext: () => void;
 }
 
 export const TeamMessages: React.FC<TeamMessagesProps> = ({ onNext }) => {
-  const { teamMessages } = BIRTHDAY_CONFIG;
+  const teamSection = content.teamMessages;
+  const teamMessages = teamSection.members;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -37,13 +38,13 @@ export const TeamMessages: React.FC<TeamMessagesProps> = ({ onNext }) => {
         <motion.div variants={cardVariants} className="text-center space-y-3">
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-zen-500/10 border border-zen-500/30 text-zen-400 font-mono text-xs">
             <Users className="w-3.5 h-3.5" />
-            <span>ENGINEERING CREW</span>
+            <span>{teamSection.badge}</span>
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
-            Every release has a team behind it.
+            {teamSection.heading}
           </h1>
           <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
-            Personal notes, gratitude, and birthday wishes from the engineers building alongside you.
+            {teamSection.subheading}
           </p>
         </motion.div>
 
@@ -98,7 +99,7 @@ export const TeamMessages: React.FC<TeamMessagesProps> = ({ onNext }) => {
             onClick={onNext}
             className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-zen-500 to-orange-500 hover:from-zen-400 hover:to-orange-400 text-slate-950 font-mono text-xs sm:text-sm font-bold tracking-wider uppercase flex items-center space-x-2 transition-all shadow-lg shadow-zen-500/20 active:scale-95"
           >
-            <span>VIEW CTO TELEMETRY</span>
+            <span>{teamSection.buttonText}</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </motion.div>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Terminal, Check, Loader2, ArrowRight } from 'lucide-react';
-import { BIRTHDAY_CONFIG } from '../config/birthdayData';
+import content from '../content';
 
 interface DeploymentTerminalProps {
   onComplete: () => void;
@@ -12,7 +12,7 @@ export const DeploymentTerminal: React.FC<DeploymentTerminalProps> = ({ onComple
   const [completedSteps, setCompletedSteps] = useState<number[]>([]);
   const [isFinished, setIsFinished] = useState(false);
 
-  const steps = BIRTHDAY_CONFIG.deploymentSteps;
+  const steps = content.deployment.steps;
   const progress = Math.min(100, Math.round(((completedSteps.length) / steps.length) * 100));
 
   useEffect(() => {
@@ -58,7 +58,7 @@ export const DeploymentTerminal: React.FC<DeploymentTerminalProps> = ({ onComple
           {/* Terminal Console Logs */}
           <div className="p-6 md:p-8 space-y-3.5 min-h-[340px] text-xs sm:text-sm">
             <div className="text-slate-500 pb-2 border-b border-white/5">
-              $ zenmonk-deploy --target=kevin --version={BIRTHDAY_CONFIG.releaseVersion} --priority=MAX
+              {content.deployment.terminalCommand}
             </div>
 
             {steps.map((step, idx) => {
