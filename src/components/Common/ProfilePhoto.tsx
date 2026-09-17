@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { getProfilePhotoUrl, DEFAULT_KEVIN_PHOTO } from '../../config/content-assets';
+import { getProfilePhotoUrl, PHOTO_URL } from '../../config/content-assets';
 
 interface ProfilePhotoProps {
   src?: string;
@@ -20,7 +20,7 @@ const sizeClasses = {
 
 export const ProfilePhoto: React.FC<ProfilePhotoProps> = ({
   src,
-  alt = "Kevin",
+  alt = "Profile",
   size = 'md',
   shape = 'circle',
   showGlow = true,
@@ -52,8 +52,8 @@ export const ProfilePhoto: React.FC<ProfilePhotoProps> = ({
           alt={alt}
           onLoad={() => setHasLoaded(true)}
           onError={() => {
-            if (imgSrc !== DEFAULT_KEVIN_PHOTO) {
-              setImgSrc(DEFAULT_KEVIN_PHOTO);
+            if (imgSrc !== PHOTO_URL) {
+              setImgSrc(PHOTO_URL);
             }
           }}
           className={`w-full h-full object-cover object-center transition-opacity duration-300 ${

@@ -1,25 +1,25 @@
-# Kevin's Birthday — Interactive Digital Experience 🎂
+# Interactive Digital Experience 🎂
 
-A fictional production deployment and secret interactive birthday experience built for **Kevin, our CTO**, by the engineering team at **Team Zenmonk**.
+An interactive production release experience built by the engineering team.
 
 ## 🚀 Experience Flow & Stages
 
 1. **Gate 0 (Restricted Access)**: Classified terminal authorization gate.
-   - **Access Code**: `launch` (configured in `src/config/birthdayData.ts`)
-2. **Stage 1 (Secret Deployment)**: Mission control deployment banner (`KEVIN v2026.09.17`).
-3. **Stage 2 (Deployment Sequence)**: Live CI/CD animated terminal logs with progress telemetry.
-4. **Stage 3 (Release Notes)**: Fictional changelog featuring *Added*, *Improved*, and *Known Issues* developer humor.
-5. **Stage 4 (Team Messages)**: Personal appreciation and birthday notes from team members.
-6. **Stage 5 (CTO System Status)**: Real-time telemetry dashboard & healthy system uptime monitoring.
-7. **Stage 6 (The Real Message)**: Calm, sincere appreciation from Team Zenmonk.
-8. **Stage 7 (Celebration)**: Interactive celebration with multi-stage confetti cannons, pulsing cake, and next year's release milestone (`Kevin v2027`).
+   - **Access Code**: Configured in content files.
+2. **Stage 1 (Deployment Reveal)**: Warm hero announcement banner (`RELEASE v2026.09.17`).
+3. **Stage 2 (Story & Context)**: The story and philosophy behind the architecture.
+4. **Stage 3 (Core Principles & Legacy)**: Core architectural pillars, Domain-Driven Design concepts, and design decisions.
+5. **Stage 4 (Team Messages)**: Personal notes, appreciation letters, and comments from the engineering team.
+6. **Stage 5 (CTO System Status)**: Real-time telemetry dashboard & system health monitoring.
+7. **Stage 6 (Final Message)**: Sincere reflections and celebration message.
+8. **Stage 7 (Celebration)**: Interactive celebration module with multi-stage confetti cannons, pulsing cake, and dynamic celebration effects.
 
 ---
 
 ## 🛠️ Tech Stack
 
 - **Framework**: React 18 + TypeScript + Vite
-- **Styling**: Tailwind CSS (custom dark theme with Zenmonk warm orange & amber highlights)
+- **Styling**: Tailwind CSS (warm orange & cream aesthetic)
 - **Animations**: Framer Motion
 - **Celebration FX**: Canvas Confetti
 - **Icons**: Lucide React
@@ -45,7 +45,8 @@ npm run build
 
 ---
 
-## ⚙️ Customization
+## ⚙️ Content Configuration
 
-All content (passwords, messages, changelog, metrics, and names) is centralized in:
-`src/config/birthdayData.ts`
+Environment-specific content is isolated into:
+- `src/content/development.json` (Generic office-safe data for development)
+- `src/content/production.json` (Target payload for production)

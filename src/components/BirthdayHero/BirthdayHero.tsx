@@ -109,7 +109,7 @@ export const BirthdayHero: React.FC<BirthdayHeroProps> = ({ onNext }) => {
           <span>{hero.badge}</span>
         </motion.div>
 
-        {/* Kevin's Profile Photograph (Circular Crop with clean white border and warm glow) */}
+        {/* Profile Photograph (Circular Crop with clean white border and warm glow) */}
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
