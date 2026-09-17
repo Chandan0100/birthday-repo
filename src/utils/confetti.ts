@@ -85,3 +85,4 @@ export const triggerContinuousConfetti = (durationMs = 3000) => {
   };
   frame();
 };
+

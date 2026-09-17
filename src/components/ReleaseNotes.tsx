@@ -140,3 +140,4 @@ export const ReleaseNotes: React.FC<ReleaseNotesProps> = ({ onNext }) => {
     </div>
   );
 };
+

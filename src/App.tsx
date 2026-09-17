@@ -36,8 +36,8 @@ export function App() {
 
   return (
     <div className="min-h-screen bg-[#090b0e] text-slate-100 flex flex-col justify-between selection:bg-zen-500/30 selection:text-zen-200 relative overflow-x-hidden">
-      {/* Background Visual Effects */}
-      <BackgroundGlow />
+      {/* Background Visual Effects (Only rendered after unlocking) */}
+      {stage > 0 && <BackgroundGlow />}
 
       {/* Header bar (Visible once authenticated) */}
       {stage > 0 && (

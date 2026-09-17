@@ -106,3 +106,4 @@ export const TeamMessages: React.FC<TeamMessagesProps> = ({ onNext }) => {
     </div>
   );
 };
+

@@ -140,3 +140,4 @@ export const DeploymentTerminal: React.FC<DeploymentTerminalProps> = ({ onComple
     </div>
   );
 };
+
