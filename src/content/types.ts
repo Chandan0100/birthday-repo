@@ -12,6 +12,7 @@ export interface BirthdayHeroContent {
   greetingPrefix: string;
   greetingHighlight: string;
   name: string;
+  photoUrl?: string;
   subtext: string;
   playfulSubtext: string;
   requirementsTitle: string;
@@ -28,6 +29,12 @@ export interface StoryContent {
   subtitle: string;
   paragraphs: string[];
   quote: string;
+  photoSection?: {
+    title: string;
+    subtitle: string;
+    photoUrl?: string;
+    annotations: string[];
+  };
   ageGapJoke: {
     title: string;
     ageLabel: string;
@@ -94,8 +101,15 @@ export interface TeamMessagesContent {
 
 export interface StatusMetric {
   label: string;
-  value: number;
+  value: string;
+  percentage: number;
   highlight?: boolean;
+}
+
+export interface StatusIndicator {
+  label: string;
+  status: string;
+  badgeType?: 'success' | 'warning' | 'info' | 'neutral';
 }
 
 export interface CtoStatusContent {
@@ -104,9 +118,12 @@ export interface CtoStatusContent {
   badge: string;
   panelTitle: string;
   healthStatus: string;
-  uptime: string;
-  systemStatusNote: string;
-  statBadges: Array<{ label: string; value: string }>;
+  systemQuotes: {
+    line1: string;
+    line2: string;
+  };
+  metrics: StatusMetric[];
+  statusIndicators: StatusIndicator[];
   easterEgg: {
     event: string;
     aggregate: string;
@@ -120,13 +137,13 @@ export interface CtoStatusContent {
     steps: string[];
     consistency: string;
   };
-  metrics: StatusMetric[];
   buttonText: string;
 }
 
 export interface FinalMessageContent {
   badge: string;
   heading: string;
+  photoUrl?: string;
   paragraphs: string[];
   closingLesson: string;
   birthdayWish: string;

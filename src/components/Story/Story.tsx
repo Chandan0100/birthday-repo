@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import content from '../../content';
-import { StarDoodle, HeartDoodle } from '../Doodles/DoodleIcons';
+import { StarDoodle, HeartDoodle, HandDrawnArrow, SparkleDoodle } from '../Doodles/DoodleIcons';
+import { ProfilePhoto } from '../Common/ProfilePhoto';
 import { ArrowRight, BookOpen, Quote, Sparkles } from 'lucide-react';
 
 interface StoryProps {
@@ -10,7 +11,7 @@ interface StoryProps {
 
 export const Story: React.FC<StoryProps> = ({ onNext }) => {
   const { story } = content;
-  const { ageGapJoke } = story;
+  const { ageGapJoke, photoSection } = story;
 
   return (
     <div className="relative min-h-[85vh] flex flex-col items-center justify-center px-4 py-8 text-center">
@@ -38,6 +39,49 @@ export const Story: React.FC<StoryProps> = ({ onNext }) => {
         <p className="text-base sm:text-lg font-medium text-[#EA580C] mb-6">
           {story.subtitle}
         </p>
+
+        {/* "The Person Behind The CTO Title" Photo Section Card */}
+        {photoSection && (
+          <div className="my-6 p-6 rounded-3xl bg-[#FFF9F2] border border-[#FED7AA] relative overflow-hidden shadow-xs">
+            <div className="flex flex-col sm:flex-row items-center gap-6">
+              {/* Photo with subtle glow & rounded crop */}
+              <div className="relative shrink-0">
+                <ProfilePhoto
+                  src={photoSection.photoUrl}
+                  alt={photoSection.title}
+                  size="lg"
+                  shape="rounded"
+                  showGlow={true}
+                />
+              </div>
+
+              {/* Story Details & Playful Annotations */}
+              <div className="space-y-2.5 text-center sm:text-left flex-1">
+                <div className="inline-flex items-center space-x-1.5 px-2.5 py-0.5 rounded-full bg-white border border-[#FED7AA] text-[11px] font-mono text-[#EA580C]">
+                  <SparkleDoodle className="w-3 h-3" color="#EA580C" />
+                  <span>OUR CTO & COLLEAGUE</span>
+                </div>
+                <h3 className="text-xl font-serif font-bold text-[#1C1917]">
+                  {photoSection.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-[#57534E] leading-relaxed">
+                  {photoSection.subtitle}
+                </p>
+
+                {/* Handwritten annotations around photo */}
+                {photoSection.annotations && (
+                  <div className="pt-2 border-t border-[#FED7AA]/60 flex items-center justify-center sm:justify-start gap-1.5 flex-wrap font-handwriting text-sm sm:text-base text-[#EA580C]">
+                    <span>{photoSection.annotations[0]}</span>
+                    <HandDrawnArrow className="w-4 h-4 text-[#F97316] inline-block" />
+                    <span className="font-bold underline">{photoSection.annotations[1]}</span>
+                    <HandDrawnArrow className="w-4 h-4 text-[#F97316] inline-block" />
+                    <span>{photoSection.annotations[2]}</span>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Paragraphs */}
         <div className="space-y-3 text-sm sm:text-base text-[#57534E] leading-relaxed mb-6">

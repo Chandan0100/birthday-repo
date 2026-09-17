@@ -12,6 +12,7 @@
     "greetingPrefix": "RELEASE STATUS,",
     "greetingHighlight": "ACTIVE! 🚀",
     "name": "System Node",
+    "photoUrl": "",
     "subtext": "Automated pipeline validation completed.",
     "playfulSubtext": "Standard system configuration parameters loaded.",
     "requirementsTitle": "System Initialization Checklist",
@@ -35,6 +36,16 @@
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     ],
+    "photoSection": {
+      "title": "Node Maintainer Overview",
+      "subtitle": "Core system engineering parameters.",
+      "photoUrl": "",
+      "annotations": [
+        "Module design",
+        "Verification",
+        "Performance testing"
+      ]
+    },
     "ageGapJoke": {
       "title": "Module Telemetry Overview",
       "ageLabel": "RUNTIME VERSION",
@@ -85,7 +96,7 @@
         "tag": "Telemetry & Metrics",
         "quote": "“Monitor performance and trace requests across boundaries.”",
         "caption": "Decoupled module pattern.",
-        "description": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores.",
+        "description": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia昆consequuntur magni dolores.",
         "iconName": "Shield"
       },
       {
@@ -162,12 +173,24 @@
     "badge": "Overview 04 — Diagnostics",
     "panelTitle": "Cluster Runtime Monitor",
     "healthStatus": "HEALTHY",
-    "uptime": "99.98% SLA",
-    "systemStatusNote": "All mock cluster services reporting nominal parameters.",
-    "statBadges": [
-      {"label": "BUILD", "value": "+1"},
-      {"label": "NODES", "value": "+1"},
-      {"label": "PARAMETERS", "value": "+∞"}
+    "systemQuotes": {
+      "line1": "“All service vectors operational.”",
+      "line2": "“Telemetry stream active.”"
+    },
+    "metrics": [
+      {"label": "Architecture", "value": "100%", "percentage": 100, "highlight": true},
+      {"label": "System Design", "value": "100%", "percentage": 100, "highlight": true},
+      {"label": "DDD Knowledge", "value": "100%", "percentage": 100, "highlight": true},
+      {"label": "Problem Solving", "value": "100%", "percentage": 100, "highlight": true},
+      {"label": "Team Trust", "value": "BUILT-IN", "percentage": 100, "highlight": true},
+      {"label": "Architecture Debates", "value": "∞", "percentage": 100, "highlight": false},
+      {"label": "\"Why?\" Questions", "value": "∞", "percentage": 100, "highlight": false}
+    ],
+    "statusIndicators": [
+      {"label": "Critical Issues", "status": "0", "badgeType": "success"},
+      {"label": "Architecture Discussions", "status": "Ongoing", "badgeType": "warning"},
+      {"label": "Simple Solutions", "status": "Under Review", "badgeType": "info"},
+      {"label": "\"Let's Think About It\"", "status": "Frequently Triggered", "badgeType": "neutral"}
     ],
     "easterEgg": {
       "event": "MockServiceDeployed",
@@ -187,20 +210,12 @@
       "steps": ["Step 1", "Step 2", "Step 3", "Step 4"],
       "consistency": "State consistency: ✓"
     },
-    "metrics": [
-      {"label": "ARCHITECTURE", "value": 100, "highlight": true},
-      {"label": "SYSTEM DESIGN", "value": 100, "highlight": true},
-      {"label": "DDD KNOWLEDGE", "value": 100, "highlight": true},
-      {"label": "PROBLEM SOLVING", "value": 100, "highlight": true},
-      {"label": "TEAM TRUST", "value": 98, "highlight": false},
-      {"label": "PATIENCE", "value": 91, "highlight": false},
-      {"label": "COFFEE", "value": 100, "highlight": true}
-    ],
     "buttonText": "Proceed to Summary"
   },
   "finalMessage": {
     "badge": "Overview 05 — Conclusion",
     "heading": "BUT SERIOUSLY...",
+    "photoUrl": "",
     "paragraphs": [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.",

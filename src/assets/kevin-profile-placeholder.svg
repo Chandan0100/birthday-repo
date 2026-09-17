@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF4E8" />
+      <stop offset="100%" stop-color="#FED7AA" />
+    </linearGradient>
+    <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F97316" />
+      <stop offset="100%" stop-color="#EA580C" />
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#bgGrad)" />
+  <!-- Stylized warm avatar silhouette / monogram -->
+  <circle cx="100" cy="75" r="35" fill="url(#avatarGrad)" />
+  <path d="M40 170 C40 130, 70 120, 100 120 C130 120, 160 130, 160 170 Z" fill="url(#avatarGrad)" opacity="0.9" />
+  <!-- Minimalist glasses / friendly tech aesthetic -->
+  <circle cx="88" cy="74" r="10" stroke="#FFF" stroke-width="3" fill="none" opacity="0.95" />
+  <circle cx="112" cy="74" r="10" stroke="#FFF" stroke-width="3" fill="none" opacity="0.95" />
+  <line x1="98" y1="74" x2="102" y2="74" stroke="#FFF" stroke-width="3" opacity="0.95" />
+  <!-- Small celebratory sparkle -->
+  <path d="M150 40 C150 48 142 55 135 55 C142 55 150 62 150 70 C150 62 158 55 165 55 C158 55 150 48 150 40 Z" fill="#FFD166" />
+</svg>

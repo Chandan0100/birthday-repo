@@ -12,6 +12,7 @@
     "greetingPrefix": "HAPPY BIRTHDAY,",
     "greetingHighlight": "KEVIN! 🎂",
     "name": "Kevin",
+    "photoUrl": "/src/assets/kevin-profile.jpg",
     "subtext": "Yes, this entire website is actually for you.",
     "playfulSubtext": "We considered sending a normal birthday message. Then someone suggested we over-engineer it.",
     "requirementsTitle": "Birthday Requirements Checklist",
@@ -35,6 +36,16 @@
       "When we thought about what to do for your birthday, we realized a standard message or corporate gift card would be painfully boring for our team.",
       "So naturally, we spent engineering hours designing, animating, and deploying an entire digital experience to celebrate you."
     ],
+    "photoSection": {
+      "title": "The Person Behind The CTO Title",
+      "subtitle": "Architectural debates, 'Why?' questions, and good coffee.",
+      "photoUrl": "/src/assets/kevin-profile.jpg",
+      "annotations": [
+        "Architecture discussions",
+        "“Why?”",
+        "More architecture discussions"
+      ]
+    },
     "ageGapJoke": {
       "title": "Team Observability Telemetry",
       "ageLabel": "AGE DIFFERENCE",
@@ -158,16 +169,28 @@
   },
   "ctoStatus": {
     "heading": "CTO SYSTEM STATUS",
-    "subheading": "Real-time leadership telemetry & operational metrics",
+    "subheading": "Real-time engineering observability & architectural diagnostics",
     "badge": "Chapter 04 — Telemetry & Diagnostics",
     "panelTitle": "System Health Monitor",
     "healthStatus": "HEALTHY",
-    "uptime": "100% Core Availability",
-    "systemStatusNote": "No critical issues detected. Although the team continues to introduce them. 😉",
-    "statBadges": [
-      {"label": "AGE", "value": "+1"},
-      {"label": "EXPERIENCE", "value": "+1"},
-      {"label": "ARCHITECTURAL OPINIONS", "value": "+∞"}
+    "systemQuotes": {
+      "line1": "“Everything is working as designed.”",
+      "line2": "“The design is still being discussed.” 😉"
+    },
+    "metrics": [
+      {"label": "Architecture", "value": "100%", "percentage": 100, "highlight": true},
+      {"label": "System Design", "value": "100%", "percentage": 100, "highlight": true},
+      {"label": "DDD Knowledge", "value": "100%", "percentage": 100, "highlight": true},
+      {"label": "Problem Solving", "value": "100%", "percentage": 100, "highlight": true},
+      {"label": "Team Trust", "value": "BUILT-IN", "percentage": 100, "highlight": true},
+      {"label": "Architecture Debates", "value": "∞", "percentage": 100, "highlight": false},
+      {"label": "\"Why?\" Questions", "value": "∞", "percentage": 100, "highlight": false}
+    ],
+    "statusIndicators": [
+      {"label": "Critical Issues", "status": "0", "badgeType": "success"},
+      {"label": "Architecture Discussions", "status": "Ongoing", "badgeType": "warning"},
+      {"label": "Simple Solutions", "status": "Under Review", "badgeType": "info"},
+      {"label": "\"Let's Think About It\"", "status": "Frequently Triggered", "badgeType": "neutral"}
     ],
     "easterEgg": {
       "event": "BirthdayCelebrated",
@@ -178,7 +201,7 @@
       "checks": [
         "Domain model loaded",
         "Architecture validated",
-        "Team dependencies resolved",
+        "Boundaries respected",
         "Celebration event dispatched"
       ]
     },
@@ -187,20 +210,12 @@
       "steps": ["Cake Delivered", "Candles Lit", "Birthday Wishes Dispatched", "Celebration Launched"],
       "consistency": "Aggregate consistency: ✓"
     },
-    "metrics": [
-      {"label": "ARCHITECTURE", "value": 100, "highlight": true},
-      {"label": "SYSTEM DESIGN", "value": 100, "highlight": true},
-      {"label": "DDD KNOWLEDGE", "value": 100, "highlight": true},
-      {"label": "PROBLEM SOLVING", "value": 100, "highlight": true},
-      {"label": "TEAM TRUST", "value": 98, "highlight": false},
-      {"label": "PATIENCE", "value": 91, "highlight": false},
-      {"label": "COFFEE", "value": 100, "highlight": true}
-    ],
     "buttonText": "Proceed to Final Message"
   },
   "finalMessage": {
     "badge": "Chapter 05 — Heart of the Team",
     "heading": "BUT SERIOUSLY...",
+    "photoUrl": "/src/assets/kevin-profile.jpg",
     "paragraphs": [
       "We're lucky to work with someone who makes us question our decisions, think a little deeper, and occasionally rethink an entire design five minutes before we thought we were done. 😄",
       "You've helped us grow as engineers, but more importantly, you've made the journey interesting.",

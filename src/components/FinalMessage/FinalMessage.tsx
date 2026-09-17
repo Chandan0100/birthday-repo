@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import content from '../../content';
 import { CakeDoodle, HeartDoodle, SparkleDoodle, StarDoodle, BalloonDoodle } from '../Doodles/DoodleIcons';
+import { ProfilePhoto } from '../Common/ProfilePhoto';
 import { ArrowRight, Heart } from 'lucide-react';
 
 interface FinalMessageProps {
@@ -35,7 +36,7 @@ export const FinalMessage: React.FC<FinalMessageProps> = ({ onNext }) => {
         initial={{ opacity: 0, y: 25 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        className="relative z-10 w-full bg-white/90 backdrop-blur-md border border-[#FED7AA]/70 rounded-3xl p-8 sm:p-12 md:p-14 shadow-xl shadow-[#F97316]/5 text-[#1C1917]"
+        className="relative z-10 w-full bg-white/90 backdrop-blur-md border border-[#FED7AA]/80 rounded-3xl p-8 sm:p-12 md:p-14 shadow-xl shadow-[#F97316]/5 text-[#1C1917]"
       >
         {/* Top Badge */}
         <div className="flex items-center justify-between mb-6">
@@ -62,13 +63,20 @@ export const FinalMessage: React.FC<FinalMessageProps> = ({ onNext }) => {
         <div className="my-8 p-6 rounded-2xl bg-[#FFF9F2] border border-[#FED7AA] shadow-sm text-center">
           <SparkleDoodle className="w-6 h-6 mx-auto mb-2" color="#F97316" />
           <p className="font-serif italic text-xl sm:text-2xl text-[#1C1917] font-semibold leading-snug">
-            “{finalMessage.closingLesson}”
+            {finalMessage.closingLesson}
           </p>
         </div>
 
-        {/* Birthday Wish & Team Signoff */}
-        <div className="text-center my-8 space-y-3">
-          <div className="flex justify-center mb-2">
+        {/* Birthday Wish & Team Signoff with Photo */}
+        <div className="text-center my-8 space-y-4">
+          <div className="flex items-center justify-center gap-4">
+            <ProfilePhoto
+              src={finalMessage.photoUrl}
+              alt="Kevin"
+              size="md"
+              shape="circle"
+              showGlow={true}
+            />
             <CakeDoodle className="w-14 h-14" />
           </div>
 
@@ -100,4 +108,3 @@ export const FinalMessage: React.FC<FinalMessageProps> = ({ onNext }) => {
 };
 
 export default FinalMessage;
-
