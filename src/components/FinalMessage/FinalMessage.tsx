@@ -72,6 +72,7 @@ export const FinalMessage: React.FC<FinalMessageProps> = ({ onNext }) => {
           <div className="flex items-center justify-center gap-4">
             <ProfilePhoto
               src={finalMessage.photoUrl}
+              alt="Kevin"
               alt="Profile"
               size="md"
               shape="circle"
