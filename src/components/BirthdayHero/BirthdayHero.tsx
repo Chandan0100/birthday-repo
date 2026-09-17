@@ -7,7 +7,6 @@ import {
   StarDoodle,
   HeartDoodle,
   BalloonDoodle,
-  CakeDoodle,
 } from '../Doodles/DoodleIcons';
 import { ProfilePhoto } from '../Common/ProfilePhoto';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
@@ -110,12 +109,12 @@ export const BirthdayHero: React.FC<BirthdayHeroProps> = ({ onNext }) => {
           <span>{hero.badge}</span>
         </motion.div>
 
-        {/* Profile Photograph & Celebration Cake */}
+        {/* Profile Photograph (Circular Crop with clean white border and warm glow) */}
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="flex items-center justify-center gap-4 mb-4"
+          className="flex justify-center mb-4"
         >
           <ProfilePhoto
             src={hero.photoUrl}
@@ -124,12 +123,6 @@ export const BirthdayHero: React.FC<BirthdayHeroProps> = ({ onNext }) => {
             shape="circle"
             showGlow={true}
           />
-          <motion.div
-            animate={{ rotate: [-3, 3, -3], y: [0, -3, 0] }}
-            transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-          >
-            <CakeDoodle className="w-14 h-14 sm:w-16 sm:h-16" />
-          </motion.div>
         </motion.div>
 
         {/* Focal Headline */}
