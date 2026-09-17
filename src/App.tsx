@@ -35,13 +35,11 @@ export function App() {
     setStage(1);
   };
 
-  const isDarkStage = stage === 3 || stage === 5;
-
   return (
     <div className={`min-h-screen flex flex-col justify-between relative overflow-x-hidden transition-colors duration-700 ${
-      stage === 0 ? 'bg-[#0F0F11]' : isDarkStage ? 'bg-[#08080A] text-neutral-100' : 'bg-[#FFF9F2] text-[#1C1917]'
+      stage === 0 ? 'bg-[#0F0F11]' : 'bg-[#FFF9F2] text-[#1C1917]'
     }`}>
-      {/* Dynamic atmospheric lighting */}
+      {/* Consistent warm atmospheric lighting */}
       {stage > 0 && <AmbientLighting stage={stage} />}
 
       {/* Top Header Navigation */}
@@ -50,7 +48,6 @@ export function App() {
           currentStage={stage}
           totalStages={totalStages}
           onNavigateStage={handleNavigateStage}
-          isDarkTheme={isDarkStage}
         />
       )}
 
@@ -156,7 +153,7 @@ export function App() {
       </main>
 
       {/* Footer */}
-      {stage > 0 && <Footer isDarkTheme={isDarkStage} />}
+      {stage > 0 && <Footer />}
     </div>
   );
 }

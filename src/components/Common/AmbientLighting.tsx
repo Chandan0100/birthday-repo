@@ -6,66 +6,48 @@ interface AmbientLightingProps {
 }
 
 export const AmbientLighting: React.FC<AmbientLightingProps> = ({ stage }) => {
-  // Determine if the current stage uses the dark engineering theme
-  const isDarkStage = stage === 3 || stage === 5;
+  // Richer warm celebratory glow for final celebration stage
+  const isCelebration = stage === 7;
 
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden transition-colors duration-700">
-      {/* Background radial atmosphere */}
-      {isDarkStage ? (
-        <>
-          <div className="absolute inset-0 bg-[#08080A]" />
-          {/* Subtle grid pattern */}
-          <div
-            className="absolute inset-0 opacity-[0.03]"
-            style={{
-              backgroundImage: 'radial-gradient(#00FF66 1px, transparent 1px)',
-              backgroundSize: '24px 24px',
-            }}
-          />
-          {/* Neon green ambient spot */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.15 }}
-            transition={{ duration: 0.8 }}
-            className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#00FF66] rounded-full blur-[140px]"
-          />
-        </>
-      ) : (
-        <>
-          <div className="absolute inset-0 bg-[#FFF9F2]" />
-          {/* Warm background subtle grid */}
-          <div
-            className="absolute inset-0 opacity-[0.04]"
-            style={{
-              backgroundImage: 'radial-gradient(#F97316 1.5px, transparent 1.5px)',
-              backgroundSize: '32px 32px',
-            }}
-          />
-          {/* Warm orange & gold glow blobs */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.2 }}
-            transition={{ duration: 0.8 }}
-            className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-[#F97316] rounded-full blur-[120px]"
-          />
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.25 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="absolute top-1/2 -right-32 w-[450px] h-[450px] bg-[#FFD166] rounded-full blur-[130px]"
-          />
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.15 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="absolute -bottom-32 left-1/3 w-[500px] h-[500px] bg-[#F7A8B8] rounded-full blur-[140px]"
-          />
-        </>
-      )}
+      {/* Primary warm cream background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#FFFDF9] via-[#FFF9F2] to-[#FFF4E8]" />
+
+      {/* Subtle warm architectural dot grid pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.045]"
+        style={{
+          backgroundImage: 'radial-gradient(#F97316 1.5px, transparent 1.5px)',
+          backgroundSize: '28px 28px',
+        }}
+      />
+
+      {/* Primary soft warm orange glow blob */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isCelebration ? 0.35 : 0.22 }}
+        transition={{ duration: 0.8 }}
+        className="absolute -top-32 -left-20 w-[550px] h-[550px] bg-[#F97316] rounded-full blur-[130px]"
+      />
+
+      {/* Supporting celebratory golden warm spot */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isCelebration ? 0.38 : 0.25 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="absolute top-1/3 -right-28 w-[500px] h-[500px] bg-[#FFD166] rounded-full blur-[140px]"
+      />
+
+      {/* Gentle peach/rose ambient base */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isCelebration ? 0.25 : 0.18 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="absolute -bottom-28 left-1/4 w-[520px] h-[520px] bg-[#F7A8B8] rounded-full blur-[150px]"
+      />
     </div>
   );
 };
 
 export default AmbientLighting;
-

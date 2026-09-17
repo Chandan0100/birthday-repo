@@ -5,25 +5,17 @@ interface StageNavProps {
   currentStage: number;
   totalStages: number;
   onNavigateStage: (stage: number) => void;
-  isDarkTheme?: boolean;
 }
 
 export const StageNav: React.FC<StageNavProps> = ({
   currentStage,
   totalStages,
   onNavigateStage,
-  isDarkTheme = false,
 }) => {
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-40 px-4 md:px-8 py-3.5 backdrop-blur-md border-b transition-colors duration-500 ${
-        isDarkTheme
-          ? 'bg-[#0A0A0A]/85 border-neutral-800 text-neutral-200'
-          : 'bg-[#FFF9F2]/85 border-[#FED7AA]/50 text-[#292524]'
-      }`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-40 px-4 md:px-8 py-3.5 backdrop-blur-md bg-[#FFF9F2]/90 border-b border-[#FED7AA]/50 text-[#292524] transition-colors duration-500 shadow-sm shadow-[#F97316]/5">
       <div className="max-w-5xl mx-auto flex items-center justify-between">
-        <ZenmonkLogo variant={isDarkTheme ? 'dark' : 'light'} />
+        <ZenmonkLogo variant="light" />
 
         {/* Stage progress pill / indicator */}
         <div className="flex items-center space-x-1.5">
@@ -39,10 +31,10 @@ export const StageNav: React.FC<StageNavProps> = ({
                 aria-label={`Jump to chapter ${stepNum}`}
                 className={`h-2 rounded-full transition-all duration-300 ${
                   isActive
-                    ? 'w-7 bg-[#F97316]'
+                    ? 'w-7 bg-[#F97316] shadow-sm shadow-[#F97316]/30'
                     : isPassed
-                    ? isDarkTheme ? 'w-2.5 bg-neutral-600 hover:bg-neutral-500' : 'w-2.5 bg-[#FDBA74] hover:bg-[#FB923C]'
-                    : isDarkTheme ? 'w-2 bg-neutral-800 hover:bg-neutral-700' : 'w-2 bg-[#E7E5E4] hover:bg-[#D6D3D1]'
+                    ? 'w-2.5 bg-[#FDBA74] hover:bg-[#FB923C]'
+                    : 'w-2 bg-[#E7E5E4] hover:bg-[#D6D3D1]'
                 }`}
               />
             );
@@ -50,12 +42,8 @@ export const StageNav: React.FC<StageNavProps> = ({
         </div>
 
         <div className="hidden sm:flex items-center space-x-2 font-mono text-xs">
-          <span className={`px-2.5 py-1 rounded-full text-[11px] font-medium ${
-            isDarkTheme
-              ? 'bg-neutral-900 border border-neutral-800 text-neutral-400'
-              : 'bg-[#FFF4E8] border border-[#FED7AA] text-[#EA580C]'
-          }`}>
-            Part {currentStage} of {totalStages}
+          <span className="px-2.5 py-1 rounded-full text-[11px] font-medium bg-[#FFF4E8] border border-[#FED7AA] text-[#EA580C]">
+            Chapter 0{currentStage} / 0{totalStages}
           </span>
         </div>
       </div>
@@ -64,4 +52,3 @@ export const StageNav: React.FC<StageNavProps> = ({
 };
 
 export default StageNav;
-
