@@ -6,6 +6,7 @@ import { PasswordGate } from './components/PasswordGate';
 import { SecretDeployment } from './components/SecretDeployment';
 import { DeploymentTerminal } from './components/DeploymentTerminal';
 import { ReleaseNotes } from './components/ReleaseNotes';
+import { EngineeringLegacy } from './components/EngineeringLegacy';
 import { TeamMessages } from './components/TeamMessages';
 import { CtoSystemStatus } from './components/CtoSystemStatus';
 import { RealMessage } from './components/RealMessage';
@@ -14,7 +15,7 @@ import { Footer } from './components/Footer';
 
 export function App() {
   const [stage, setStage] = useState<number>(0);
-  const totalStages = 7;
+  const totalStages = 8;
 
   // Handles unlocking through password gate
   const handlePasswordSuccess = () => {
@@ -108,7 +109,7 @@ export function App() {
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.4 }}
             >
-              <TeamMessages onNext={handleNextStage} />
+              <EngineeringLegacy onNext={handleNextStage} />
             </motion.div>
           )}
 
@@ -120,7 +121,7 @@ export function App() {
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.4 }}
             >
-              <CtoSystemStatus onNext={handleNextStage} />
+              <TeamMessages onNext={handleNextStage} />
             </motion.div>
           )}
 
@@ -132,13 +133,25 @@ export function App() {
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.4 }}
             >
-              <RealMessage onNext={handleNextStage} />
+              <CtoSystemStatus onNext={handleNextStage} />
             </motion.div>
           )}
 
           {stage === 7 && (
             <motion.div
               key="stage-7"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.4 }}
+            >
+              <RealMessage onNext={handleNextStage} />
+            </motion.div>
+          )}
+
+          {stage === 8 && (
+            <motion.div
+              key="stage-8"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
@@ -151,7 +164,7 @@ export function App() {
       </main>
 
       {/* Zenmonk Brand Footer */}
-      {stage > 0 && stage < 7 && <Footer />}
+      {stage > 0 && stage < 8 && <Footer />}
     </div>
   );
 }

@@ -15,6 +15,7 @@ export const Header: React.FC<HeaderProps> = ({ currentStage, totalStages, onNav
     'Ready',
     'Build',
     'Release',
+    'Legacy',
     'Team',
     'Telemetry',
     'Message',

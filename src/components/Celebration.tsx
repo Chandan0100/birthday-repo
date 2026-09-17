@@ -229,6 +229,26 @@ export const Celebration: React.FC<CelebrationProps> = ({ onRestart }) => {
                 {BIRTHDAY_CONFIG.celebration.nextReleaseText}
               </span>
             </div>
+
+            {/* DDD Domain Event Easter Egg */}
+            <div className="pt-2.5 border-t border-white/5 grid grid-cols-2 gap-2 text-[11px] text-slate-400 font-mono">
+              <div>
+                <span className="text-slate-500">EVENT: </span>
+                <span className="text-emerald-400 font-semibold">{BIRTHDAY_CONFIG.celebration.domainEvent.event}</span>
+              </div>
+              <div>
+                <span className="text-slate-500">AGGREGATE: </span>
+                <span className="text-zen-300 font-semibold">{BIRTHDAY_CONFIG.celebration.domainEvent.aggregate}</span>
+              </div>
+              <div>
+                <span className="text-slate-500">COMMAND: </span>
+                <span className="text-amber-400 font-semibold">{BIRTHDAY_CONFIG.celebration.domainEvent.command}</span>
+              </div>
+              <div>
+                <span className="text-slate-500">STATUS: </span>
+                <span className="text-emerald-400 font-semibold">{BIRTHDAY_CONFIG.celebration.domainEvent.status}</span>
+              </div>
+            </div>
           </div>
 
           {/* Bottom Controls: Replay entire journey */}
