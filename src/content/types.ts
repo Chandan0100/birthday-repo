@@ -35,10 +35,10 @@ export interface StoryContent {
     photoUrl?: string;
     annotations: string[];
   };
-  ageGapJoke: {
+  telemetryJoke: {
     title: string;
-    ageLabel: string;
-    ageValue: string;
+    metricLabel: string;
+    metricValue: string;
     archLabel: string;
     archValue: string;
     punchline: string;

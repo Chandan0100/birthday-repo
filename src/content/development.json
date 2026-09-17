@@ -46,10 +46,10 @@
         "Performance testing"
       ]
     },
-    "ageGapJoke": {
+    "telemetryJoke": {
       "title": "Module Telemetry Overview",
-      "ageLabel": "RUNTIME VERSION",
-      "ageValue": "v1.2.0-LTS",
+      "metricLabel": "RUNTIME VERSION",
+      "metricValue": "v1.2.0-LTS",
       "archLabel": "SYSTEM BUFFER",
       "archValue": "████████████████████ 100%",
       "punchline": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."

@@ -46,15 +46,15 @@
         "More architecture discussions"
       ]
     },
-    "ageGapJoke": {
+    "telemetryJoke": {
       "title": "Team Observability Telemetry",
-      "ageLabel": "AGE DIFFERENCE",
-      "ageValue": "~ 1–2 YEARS",
-      "archLabel": "ARCHITECTURAL OPINIONS",
+      "metricLabel": "BOUNDED CONTEXTS DEBATED",
+      "metricValue": "4,096+",
+      "archLabel": "\"WHY?\" QUESTIONS ASKED",
       "archValue": "████████████████████ ∞",
-      "punchline": "Somehow you managed to be only slightly older than us and significantly more opinionated about bounded contexts. 😄"
+      "punchline": "You've taught us that 'it works on my machine' is not an architectural pattern and every simple endpoint deserves an aggregate design discussion. 😄"
     },
-    "quote": "“You're barely older than us, but somehow you're already the person making us rethink our architecture.”",
+    "quote": "“You're the person who makes us question our architecture, think in domain models, and genuinely love the craft.”",
     "buttonText": "See What We Somehow Learned"
   },
   "legacy": {
@@ -129,7 +129,7 @@
     "chandanLetter": {
       "salutation": "Kevin,",
       "paragraphs": [
-        "You're barely a couple of years ahead of us, but somehow you've managed to be several architectural decisions ahead of us. 😄",
+        "From the very first architecture debate to every deep dive into domain modeling, working alongside you has completely transformed how we build systems. 😄",
         "From DDD debates and system-design discussions to questioning why we built something the way we did — you've pushed us to think harder about what we're actually building.",
         "A lot of the things we now consider normal engineering practice started as conversations with you.",
         "We appreciate the trust, the freedom to experiment, the technical debates, and even those moments when our 'simple solution' turned out to need a little more thought.",
@@ -145,7 +145,7 @@
         "name": "Satvik",
         "role": "Engineering Team",
         "avatarBg": "from-emerald-500 to-teal-700",
-        "message": "Happy Birthday Kevin! Thanks for constantly raising the engineering bar and teaching us that 'it works on my machine' is not a valid architectural pattern. Hope you take a break from refactoring today!",
+        "message": "Happy Birthday Kevin! Thanks for constantly raising the engineering bar and showing us that 'it works on my machine' is not a valid architectural pattern. Hope you take a break from refactoring today!",
         "tags": ["ArchitectureDebates", "NoQuickFixes"]
       },
       {

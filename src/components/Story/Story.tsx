@@ -11,7 +11,7 @@ interface StoryProps {
 
 export const Story: React.FC<StoryProps> = ({ onNext }) => {
   const { story } = content;
-  const { ageGapJoke, photoSection } = story;
+  const { telemetryJoke, photoSection } = story;
 
   return (
     <div className="relative min-h-[85vh] flex flex-col items-center justify-center px-4 py-8 text-center">
@@ -90,30 +90,30 @@ export const Story: React.FC<StoryProps> = ({ onNext }) => {
           ))}
         </div>
 
-        {/* The Age Gap Telemetry Card (Warm Technical Styling) */}
+        {/* The Engineering Telemetry Card (Warm Technical Styling) */}
         <div className="my-6 p-5 rounded-2xl bg-[#FFF9F2] border border-[#FED7AA] text-[#1C1917] shadow-sm font-mono text-xs">
           <div className="flex items-center justify-between pb-2 mb-3 border-b border-[#FED7AA]/70 text-[#78716C]">
             <span className="flex items-center space-x-1.5 text-[#EA580C] font-semibold">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>{ageGapJoke.title}</span>
+              <span>{telemetryJoke.title}</span>
             </span>
             <span className="text-[#A8A29E] text-[11px]">DIFF://v2026</span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
             <div className="p-3 rounded-xl bg-white border border-[#FED7AA]/80 shadow-xs">
-              <span className="text-[#78716C] block text-[10px] uppercase font-bold tracking-wider">{ageGapJoke.ageLabel}</span>
-              <span className="text-[#EA580C] font-bold text-base mt-0.5 block">{ageGapJoke.ageValue}</span>
+              <span className="text-[#78716C] block text-[10px] uppercase font-bold tracking-wider">{telemetryJoke.metricLabel}</span>
+              <span className="text-[#EA580C] font-bold text-base mt-0.5 block">{telemetryJoke.metricValue}</span>
             </div>
 
             <div className="p-3 rounded-xl bg-white border border-[#FED7AA]/80 shadow-xs">
-              <span className="text-[#78716C] block text-[10px] uppercase font-bold tracking-wider">{ageGapJoke.archLabel}</span>
-              <span className="text-[#F97316] font-bold text-base mt-0.5 block tracking-widest">{ageGapJoke.archValue}</span>
+              <span className="text-[#78716C] block text-[10px] uppercase font-bold tracking-wider">{telemetryJoke.archLabel}</span>
+              <span className="text-[#F97316] font-bold text-base mt-0.5 block tracking-widest">{telemetryJoke.archValue}</span>
             </div>
           </div>
 
           <p className="text-[#44403C] text-xs italic bg-white/80 p-3 rounded-xl border-l-3 border-[#F97316] shadow-xs">
-            {ageGapJoke.punchline}
+            {telemetryJoke.punchline}
           </p>
         </div>
 
