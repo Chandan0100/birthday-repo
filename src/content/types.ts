@@ -2,51 +2,36 @@ export interface BrandContent {
   name: string;
   subtext: string;
   badge: string;
+  teamTagline: string;
   madeWith: string;
   forPerson: string;
 }
 
-export interface PersonContent {
+export interface BirthdayHeroContent {
+  badge: string;
+  greetingPrefix: string;
+  greetingHighlight: string;
   name: string;
-  role: string;
+  subtext: string;
+  buttonText: string;
+  cardNote: string;
 }
 
-export interface ReleaseCategory {
+export interface StoryContent {
+  badge: string;
   title: string;
-  type: 'added' | 'improved' | 'issues';
-  items: string[];
+  subtitle: string;
+  paragraphs: string[];
+  quote: string;
+  buttonText: string;
 }
 
-export interface ReleaseContent {
-  version: string;
-  environment: string;
-  initiatedBy: string;
-  priority: string;
-  tagline: string;
-  headline: string;
-  headlineHighlight: string;
-  description: string;
-  status: string;
-  nextMilestone: string;
-  categories: ReleaseCategory[];
-}
-
-export interface DeploymentStep {
-  text: string;
-  duration: number;
-}
-
-export interface DeploymentContent {
-  terminalCommand: string;
-  pipelineLabel: string;
-  steps: DeploymentStep[];
-}
-
-export interface LegacyConcept {
+export interface LegacyPillar {
   id: string;
   title: string;
   tag: string;
   quote: string;
+  description: string;
   iconName: string;
 }
 
@@ -54,28 +39,36 @@ export interface LegacyContent {
   heading: string;
   subheading: string;
   badge: string;
-  centralTheme: string;
-  concepts: LegacyConcept[];
-  transitionHeader: string;
-  transitionText: string;
+  leadQuote: string;
+  pillars: LegacyPillar[];
+  transitionLead: string;
+  transitionPause1: string;
   transitionPunchline: string;
-  transitionLegacy: string;
+  transitionNote: string;
+  buttonText: string;
 }
 
-export interface TeamMember {
+export interface TeamMemberMessage {
   id: string;
   name: string;
   role: string;
   avatarBg?: string;
   message: string;
+  tags?: string[];
 }
 
 export interface TeamMessagesContent {
   heading: string;
   subheading: string;
   badge: string;
+  chandanLetter: {
+    salutation: string;
+    paragraphs: string[];
+    author: string;
+    role: string;
+  };
+  members: TeamMemberMessage[];
   buttonText: string;
-  members: TeamMember[];
 }
 
 export interface StatusMetric {
@@ -89,22 +82,27 @@ export interface CtoStatusContent {
   subheading: string;
   badge: string;
   panelTitle: string;
-  panelStatus: string;
   healthStatus: string;
   uptime: string;
   systemStatusNote: string;
+  easterEgg: {
+    event: string;
+    aggregate: string;
+    command: string;
+    status: string;
+    checks: string[];
+  };
   metrics: StatusMetric[];
+  buttonText: string;
 }
 
 export interface FinalMessageContent {
   badge: string;
   heading: string;
-  subheading: string;
-  bulletPoints: string[];
-  closingQuote: string;
-  gratitude: string;
-  greeting: string;
-  subtext: string;
+  paragraphs: string[];
+  closingLesson: string;
+  birthdayWish: string;
+  signoff: string;
   buttonText: string;
 }
 
@@ -117,32 +115,20 @@ export interface CelebrationModeItem {
 
 export interface CelebrationContent {
   heading: string;
-  deploymentStatusText: string;
-  statusLabel: string;
-  statusValue: string;
-  nextReleaseLabel: string;
-  nextReleaseText: string;
-  buttonText: string;
+  subheading: string;
   modesLabel: string;
-  replaySurpriseText: string;
-  domainEvent: {
-    event: string;
-    aggregate: string;
-    command: string;
-    status: string;
-  };
+  replayPrompt: string;
+  restartButtonText: string;
   modes: CelebrationModeItem[];
 }
 
 export interface ExperienceContent {
   brand: BrandContent;
-  person: PersonContent;
-  release: ReleaseContent;
-  deployment: DeploymentContent;
+  hero: BirthdayHeroContent;
+  story: StoryContent;
   legacy: LegacyContent;
   teamMessages: TeamMessagesContent;
   ctoStatus: CtoStatusContent;
   finalMessage: FinalMessageContent;
   celebration: CelebrationContent;
 }
-

@@ -1,24 +1,22 @@
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { BackgroundGlow } from './components/BackgroundGlow';
-import { DoodleOverlay } from './components/Doodles/DoodleOverlay';
-import { Header } from './components/Header';
-import { PasswordGate } from './components/PasswordGate';
-import { SecretDeployment } from './components/SecretDeployment';
-import { DeploymentTerminal } from './components/DeploymentTerminal';
-import { ReleaseNotes } from './components/ReleaseNotes';
-import { EngineeringLegacy } from './components/EngineeringLegacy';
-import { TeamMessages } from './components/TeamMessages';
-import { CtoSystemStatus } from './components/CtoSystemStatus';
-import { RealMessage } from './components/RealMessage';
-import { Celebration } from './components/Celebration';
-import { Footer } from './components/Footer';
+import { PasswordGate } from './components/PasswordGate/PasswordGate';
+import { BirthdayHero } from './components/BirthdayHero/BirthdayHero';
+import { Story } from './components/Story/Story';
+import { EngineeringLegacy } from './components/EngineeringLegacy/EngineeringLegacy';
+import { TeamMessages } from './components/TeamMessages/TeamMessages';
+import { CtoStatus } from './components/CtoStatus/CtoStatus';
+import { FinalMessage } from './components/FinalMessage/FinalMessage';
+import { Celebration } from './components/Celebration/Celebration';
+import { StageNav } from './components/Common/StageNav';
+import { Footer } from './components/Common/Footer';
+import { AmbientLighting } from './components/Common/AmbientLighting';
 
 export function App() {
   const [stage, setStage] = useState<number>(0);
-  const totalStages = 8;
+  const totalStages = 7;
 
-  // Handles unlocking through password gate
+  // Unlocks upon entering correct password
   const handlePasswordSuccess = () => {
     setStage(1);
   };
@@ -37,25 +35,27 @@ export function App() {
     setStage(1);
   };
 
+  const isDarkStage = stage === 3 || stage === 5;
+
   return (
-    <div className="min-h-screen bg-[#050505] text-[#F5F5F5] flex flex-col justify-between selection:bg-[#00FF66]/25 selection:text-[#00FF66] relative overflow-x-hidden">
-      {/* Background Visual Effects (Only rendered after unlocking) */}
-      {stage > 0 && <BackgroundGlow stage={stage} />}
+    <div className={`min-h-screen flex flex-col justify-between relative overflow-x-hidden transition-colors duration-700 ${
+      stage === 0 ? 'bg-[#0F0F11]' : isDarkStage ? 'bg-[#08080A] text-neutral-100' : 'bg-[#FFF9F2] text-[#1C1917]'
+    }`}>
+      {/* Dynamic atmospheric lighting */}
+      {stage > 0 && <AmbientLighting stage={stage} />}
 
-      {/* Progressive Hand-Drawn Doodles / Annotations */}
-      {stage > 0 && <DoodleOverlay stage={stage} />}
-
-      {/* Header bar (Visible once authenticated) */}
+      {/* Top Header Navigation */}
       {stage > 0 && (
-        <Header
+        <StageNav
           currentStage={stage}
           totalStages={totalStages}
           onNavigateStage={handleNavigateStage}
+          isDarkTheme={isDarkStage}
         />
       )}
 
-      {/* Main Experience Flow */}
-      <main className={`flex-1 flex flex-col justify-center relative z-10 ${stage > 0 ? 'pt-20 pb-12' : ''}`}>
+      {/* Main Stage Flow */}
+      <main className={`flex-1 flex flex-col justify-center relative z-10 ${stage > 0 ? 'pt-20 pb-8' : ''}`}>
         <AnimatePresence mode="wait">
           {stage === 0 && (
             <motion.div
@@ -72,94 +72,82 @@ export function App() {
           {stage === 1 && (
             <motion.div
               key="stage-1"
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -15 }}
-              transition={{ duration: 0.4 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
             >
-              <SecretDeployment onDeploy={handleNextStage} />
+              <BirthdayHero onNext={handleNextStage} />
             </motion.div>
           )}
 
           {stage === 2 && (
             <motion.div
               key="stage-2"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
             >
-              <DeploymentTerminal onComplete={handleNextStage} />
+              <Story onNext={handleNextStage} />
             </motion.div>
           )}
 
           {stage === 3 && (
             <motion.div
               key="stage-3"
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -15 }}
-              transition={{ duration: 0.4 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
             >
-              <ReleaseNotes onNext={handleNextStage} />
+              <EngineeringLegacy onNext={handleNextStage} />
             </motion.div>
           )}
 
           {stage === 4 && (
             <motion.div
               key="stage-4"
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -15 }}
-              transition={{ duration: 0.4 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
             >
-              <EngineeringLegacy onNext={handleNextStage} />
+              <TeamMessages onNext={handleNextStage} />
             </motion.div>
           )}
 
           {stage === 5 && (
             <motion.div
               key="stage-5"
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -15 }}
-              transition={{ duration: 0.4 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
             >
-              <TeamMessages onNext={handleNextStage} />
+              <CtoStatus onNext={handleNextStage} />
             </motion.div>
           )}
 
           {stage === 6 && (
             <motion.div
               key="stage-6"
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -15 }}
-              transition={{ duration: 0.4 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
             >
-              <CtoSystemStatus onNext={handleNextStage} />
+              <FinalMessage onNext={handleNextStage} />
             </motion.div>
           )}
 
           {stage === 7 && (
             <motion.div
               key="stage-7"
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -15 }}
-              transition={{ duration: 0.4 }}
-            >
-              <RealMessage onNext={handleNextStage} />
-            </motion.div>
-          )}
-
-          {stage === 8 && (
-            <motion.div
-              key="stage-8"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.4 }}
+              transition={{ duration: 0.5 }}
             >
               <Celebration onRestart={handleRestart} />
             </motion.div>
@@ -167,8 +155,8 @@ export function App() {
         </AnimatePresence>
       </main>
 
-      {/* Zenmonk Brand Footer */}
-      {stage > 0 && stage < 8 && <Footer />}
+      {/* Footer */}
+      {stage > 0 && <Footer isDarkTheme={isDarkStage} />}
     </div>
   );
 }

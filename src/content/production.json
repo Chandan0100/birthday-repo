@@ -1,209 +1,210 @@
 {
   "brand": {
-    "name": "ZENMONK",
-    "subtext": "TEAM ZENMONK",
-    "badge": "CONFIDENTIAL PIPELINE",
-    "madeWith": "Made with ❤️",
-    "forPerson": "Kevin"
+    "name": "Zenmonk",
+    "subtext": "Engineering Team",
+    "badge": "Team Zenmonk",
+    "teamTagline": "Built with gratitude by Team Zenmonk",
+    "madeWith": "Crafted with passion, TypeScript & DDD principles",
+    "forPerson": "Kevin (CTO)"
   },
-  "person": {
+  "hero": {
+    "badge": "A Special Digital Surprise",
+    "greetingPrefix": "HAPPY BIRTHDAY",
+    "greetingHighlight": "KEVIN",
     "name": "Kevin",
-    "role": "CTO"
+    "subtext": "We made something especially for you.",
+    "buttonText": "Discover The Story",
+    "cardNote": "From all of us at Team Zenmonk"
   },
-  "release": {
-    "version": "v2026.09.17",
-    "environment": "PRODUCTION",
-    "initiatedBy": "TEAM ZENMONK",
-    "priority": "VERY HIGH",
-    "tagline": "Birthday Release Notes",
-    "headline": "A SPECIAL DEPLOYMENT",
-    "headlineHighlight": "IS READY.",
-    "description": "The engineering team has finalized the custom birthday build for Kevin. All automated tests have passed. Awaiting final CTO execution.",
-    "status": "Stable",
-    "nextMilestone": "Another great year.",
-    "categories": [
-      {
-        "title": "Added",
-        "type": "added",
-        "items": [
-          "+1 year of experience & engineering wisdom",
-          "New memories and milestone achievements unlocked",
-          "More wisdom points added to leadership skill tree",
-          "Another year of visionary technical leadership",
-          "Unlimited CTO-level architecture discussions"
-        ]
-      },
-      {
-        "title": "Improved",
-        "type": "improved",
-        "items": [
-          "Problem solving velocity under complex constraints",
-          "System thinking & high-scale architectural design",
-          "Team building and empowering engineers to own outcomes",
-          "Patience with engineers submitting 500-line PRs"
-        ]
-      },
-      {
-        "title": "Known Issues",
-        "type": "issues",
-        "items": [
-          "Engineers still claim: \"It's just a small 5-minute change.\"",
-          "\"One quick question\" continues to take at least 30 minutes.",
-          "Production incidents continue to appear at the worst possible time.",
-          "CTO remains statistically impossible to escape from in Slack threads."
-        ]
-      }
-    ]
-  },
-  "deployment": {
-    "terminalCommand": "$ zenmonk deploy --target=kevin --version=v2026.09.17 --priority=MAX",
-    "pipelineLabel": "DEPLOYMENT PIPELINE",
-    "steps": [
-      { "text": "Initializing deployment environment...", "duration": 300 },
-      { "text": "Validating domain boundaries & bounded contexts...", "duration": 350 },
-      { "text": "Verifying aggregate consistency & invariants...", "duration": 350 },
-      { "text": "Initializing application services & command bus...", "duration": 350 },
-      { "text": "Reviewing architectural patterns & clean abstractions...", "duration": 400 },
-      { "text": "Verifying cake integrity & candle telemetry [OK]...", "duration": 300 },
-      { "text": "Dispatching BirthdayCelebratedDomainEvent...", "duration": 350 },
-      { "text": "Deployment successful. Kevin v2026.09.17 is LIVE in Production!", "duration": 400 }
-    ]
+  "story": {
+    "badge": "Chapter 01",
+    "title": "This isn't just another birthday card.",
+    "subtitle": "We wanted to tell you what you've actually left behind with us.",
+    "paragraphs": [
+      "When we sat down to think about what to make for your birthday, we realized a standard greeting card or a corporate message wouldn't do justice to the journey we've shared.",
+      "You haven't just managed a team or assigned roadmap deliverables. You've fundamentally shaped how we view software, how we tackle complexity, and how we collaborate every single day."
+    ],
+    "quote": "“You taught us how to build. So we built something for you.”",
+    "buttonText": "See What You Taught Us"
   },
   "legacy": {
-    "heading": "Some things don't belong in a release note.",
-    "subheading": "They become part of how a team thinks.",
-    "badge": "ARCHITECTURAL LEGACY",
-    "centralTheme": "You didn't just teach us how to build software. You taught us how to think about building software.",
-    "concepts": [
+    "heading": "You taught us how to build.",
+    "subheading": "Not just features. Not just applications. Systems.",
+    "badge": "Chapter 02 — Engineering Philosophy",
+    "leadQuote": "“You didn't just teach us how to build software. You taught us how to think about building software.”",
+    "pillars": [
       {
         "id": "ddd",
         "title": "Domain-Driven Design",
-        "tag": "DOMAIN FIRST",
-        "quote": "You taught us to understand the domain before rushing into the code.",
+        "tag": "Ubiquitous Language & Core Domains",
+        "quote": "“You taught us to understand the domain before rushing into the code.”",
+        "description": "To listen to the domain experts, respect the boundaries, and design models that reflect real-world problem spaces rather than database schemas.",
+        "iconName": "Layers"
+      },
+      {
+        "id": "architecture",
+        "title": "Software Architecture",
+        "tag": "Bounded Contexts & Clean Decoupling",
+        "quote": "“You taught us to think about boundaries, decisions, and why systems are structured the way they are.”",
+        "description": "Architectural decisions have consequences. You taught us that good structure is about isolating change and making the future easier to navigate.",
         "iconName": "Compass"
       },
       {
-        "id": "arch",
-        "title": "Software Architecture",
-        "tag": "BOUNDARIES & DECISIONS",
-        "quote": "You taught us that good architecture is about decisions, boundaries, and the problems we're solving — not just folders and frameworks.",
+        "id": "system-design",
+        "title": "System Design",
+        "tag": "Resilience, Scale & End-to-End Vision",
+        "quote": "“You taught us to see the entire system, not just the feature in front of us.”",
+        "description": "Looking at asynchronous event streams, state lifecycles, scalability trade-offs, and how each component fits into the grand vision.",
         "iconName": "Boxes"
       },
       {
-        "id": "system",
-        "title": "System Design",
-        "tag": "THE BIGGER PICTURE",
-        "quote": "You taught us to think about the system as a whole, not just the feature in front of us.",
-        "iconName": "Network"
-      },
-      {
-        "id": "thinking",
+        "id": "engineering-thinking",
         "title": "Engineering Thinking",
-        "tag": "FIRST PRINCIPLES",
-        "quote": "You pushed us to ask \"Why?\" before asking \"How?\"",
-        "iconName": "HelpCircle"
+        "tag": "First Principles & Rigorous Inquiry",
+        "quote": "“You taught us to ask 'Why?' before asking 'How?'”",
+        "description": "Challenging initial assumptions, digging to the root of requirements, and making deliberate technical trade-offs with clear intent.",
+        "iconName": "Cpu"
       },
       {
-        "id": "excellence",
+        "id": "technical-excellence",
         "title": "Technical Excellence",
-        "tag": "CRAFTSMANSHIP",
-        "quote": "You showed us that making something work is only the beginning.",
-        "iconName": "Layers"
+        "tag": "Craftsmanship Beyond Just 'Working'",
+        "quote": "“You taught us that making something work is only the beginning.”",
+        "description": "Code readability, testability, domain expressiveness, and long-term maintainability are where real engineering value lives.",
+        "iconName": "Sparkles"
       }
     ],
-    "transitionHeader": "And somewhere along the way...",
-    "transitionText": "These stopped being things you taught us.",
+    "transitionLead": "And somewhere along the way...",
+    "transitionPause1": "These stopped being things you taught us.",
     "transitionPunchline": "They became the way we build.",
-    "transitionLegacy": "That's probably the best part of your legacy with us."
+    "transitionNote": "A mindset forged in architectural rigor and mutual trust.",
+    "buttonText": "Read Notes From The Team"
   },
   "teamMessages": {
-    "heading": "Every release has a team behind it.",
-    "subheading": "Personal notes, gratitude, and birthday wishes from the engineers building alongside you.",
-    "badge": "ENGINEERING CREW",
-    "buttonText": "VIEW CTO TELEMETRY",
+    "heading": "Every great system has people behind it.",
+    "subheading": "And every growing engineer has people who helped them get there.",
+    "badge": "Chapter 03 — Team Messages",
+    "chandanLetter": {
+      "salutation": "Kevin,",
+      "paragraphs": [
+        "Thank you for teaching us to look at software differently.",
+        "DDD, architecture, system design, and all the engineering principles you've shared with us have become much more than technical concepts. They have changed the way we approach problems, make decisions, and think about the systems we build.",
+        "You've pushed us to go beyond simply making things work — to understand the domain, question our decisions, think about boundaries, and care about the quality of what we create.",
+        "More importantly, you've given us the opportunity to learn, experiment, make mistakes, and grow as engineers.",
+        "Thank you for being the person who taught us not just how to build software, but how to think like engineers.",
+        "Happy Birthday, Kevin. ❤️"
+      ],
+      "author": "Chandan",
+      "role": "Team Zenmonk"
+    },
     "members": [
-      {
-        "id": "chandan",
-        "name": "Chandan",
-        "role": "Engineering",
-        "avatarBg": "from-amber-500 to-orange-600",
-        "message": "Kevin,\n\nThank you for teaching us to look at software differently.\n\nDDD, architecture, system design, and all the engineering principles you've shared with us have become much more than technical concepts. They have changed the way we approach problems, make decisions, and think about the systems we build.\n\nYou've pushed us to go beyond simply making things work — to understand the domain, question our decisions, think about boundaries, and care about the quality of what we create.\n\nMore importantly, you've given us the opportunity to learn, experiment, make mistakes, and grow as engineers.\n\nThank you for being the person who taught us not just how to build software, but how to think like engineers.\n\nHappy Birthday, Kevin. ❤️"
-      },
       {
         "id": "satvik",
         "name": "Satvik",
-        "role": "Engineering",
-        "avatarBg": "from-blue-500 to-indigo-600",
-        "message": "Happy Birthday Kevin! Working under your guidance has been an incredible experience. Your ability to break down complex architectural bottlenecks into actionable decisions inspires all of us every single day.\n\nHope you take some well-deserved time off to celebrate this milestone!"
+        "role": "Engineering Team",
+        "avatarBg": "from-emerald-500 to-teal-700",
+        "message": "Happy Birthday Kevin! Thank you for raising the bar on system design and teaching us to think deeply before writing a single line of code. Hope you have a fantastic celebration!",
+        "tags": ["Architecture", "Guidance"]
       },
       {
         "id": "harish",
         "name": "Harish",
-        "role": "Engineering",
-        "avatarBg": "from-emerald-500 to-teal-600",
-        "message": "Wishing you a fantastic Birthday, Kevin! Thank you for fostering a culture where engineering excellence meets genuine warmth and continuous learning.\n\nHere's to building even bigger and better systems together in the coming year!"
+        "role": "Engineering Team",
+        "avatarBg": "from-orange-500 to-amber-700",
+        "message": "Wishing you the happiest birthday, Kevin! Your architectural insights and commitment to quality inspire all of us to be better engineers every day.",
+        "tags": ["Domain Modeling", "Mentorship"]
+      },
+      {
+        "id": "team-zenmonk",
+        "name": "Team Zenmonk",
+        "role": "Engineering & Product",
+        "avatarBg": "from-indigo-500 to-purple-700",
+        "message": "From brainstorming domain events to refactoring core modules, thank you for guiding us with patience, clarity, and visionary leadership!",
+        "tags": ["Leadership", "Culture"]
       }
-    ]
+    ],
+    "buttonText": "Inspect System Telemetry"
   },
   "ctoStatus": {
     "heading": "CTO SYSTEM STATUS",
-    "subheading": "Core leadership metrics, runtime diagnostics & health monitoring",
-    "badge": "REAL-TIME TELEMETRY",
-    "panelTitle": "CORE PERFORMANCE VECTORS",
-    "panelStatus": "ALL GAUGES NOMINAL",
+    "subheading": "Real-time leadership telemetry & operational metrics",
+    "badge": "Chapter 04 — Telemetry & Diagnostics",
+    "panelTitle": "System Health Monitor",
     "healthStatus": "HEALTHY",
-    "uptime": "UPTIME: 100% (365 DAYS/YEAR)",
-    "systemStatusNote": "No critical issues detected. Although the team continues to generate unexpected requirements.",
-    "metrics": [
-      { "label": "ARCHITECTURE & DDD", "value": 100, "highlight": true },
-      { "label": "SYSTEM DESIGN", "value": 100, "highlight": true },
-      { "label": "PROBLEM SOLVING", "value": 100, "highlight": true },
-      { "label": "TEAM TRUST", "value": 98, "highlight": false },
-      { "label": "LEADERSHIP & MENTORSHIP", "value": 100, "highlight": true },
-      { "label": "PATIENCE WITH DEVS", "value": 91, "highlight": false },
-      { "label": "COFFEE INTAKE", "value": 100, "highlight": true }
-    ]
-  },
-  "finalMessage": {
-    "badge": "A NOTE FROM THE TEAM",
-    "heading": "Every engineer remembers the people who taught them to code.",
-    "subheading": "But the people who teach us how to think stay with us much longer.",
-    "bulletPoints": [
-      "You've taught us to question assumptions.",
-      "To understand the domain.",
-      "To think in boundaries.",
-      "To design before we implement.",
-      "And to care about the systems we're building — not just the code we're writing."
-    ],
-    "closingQuote": "Those lessons will travel much further than any project we've built together.",
-    "gratitude": "Thank you, Kevin.",
-    "greeting": "Happy Birthday. 🎂",
-    "subtext": "— Team Zenmonk ❤️",
-    "buttonText": "PROCEED TO CELEBRATION"
-  },
-  "celebration": {
-    "heading": "🎉 HAPPY BIRTHDAY, KEVIN! 🎉",
-    "deploymentStatusText": "Deployment completed successfully.",
-    "statusLabel": "Birthday Status",
-    "statusValue": "100% COMPLETE",
-    "nextReleaseLabel": "Next Planned Release:",
-    "nextReleaseText": "Kevin v2027",
-    "buttonText": "CELEBRATE AGAIN 🎉",
-    "modesLabel": "CELEBRATION STYLES",
-    "replaySurpriseText": "REPLAY SURPRISE FROM START",
-    "domainEvent": {
+    "uptime": "100% Core Availability",
+    "systemStatusNote": "No critical issues detected. Although the team continues to generate unexpected requirements. 😉",
+    "easterEgg": {
       "event": "BirthdayCelebrated",
       "aggregate": "Kevin",
       "command": "CelebrateBirthday",
-      "status": "SUCCESS"
+      "status": "SUCCESS",
+      "checks": [
+        "Domain model loaded",
+        "Architecture validated",
+        "Team dependencies resolved",
+        "Celebration event dispatched"
+      ]
     },
+    "metrics": [
+      {"label": "ARCHITECTURE", "value": 100, "highlight": true},
+      {"label": "PROBLEM SOLVING", "value": 100, "highlight": true},
+      {"label": "TEAM TRUST", "value": 98, "highlight": false},
+      {"label": "LEADERSHIP", "value": 100, "highlight": true},
+      {"label": "PATIENCE", "value": 91, "highlight": false},
+      {"label": "COFFEE", "value": 100, "highlight": true}
+    ],
+    "buttonText": "Proceed to Final Message"
+  },
+  "finalMessage": {
+    "badge": "Chapter 05 — Heart of the Team",
+    "heading": "But seriously...",
+    "paragraphs": [
+      "A CTO doesn't just build systems.",
+      "A great leader creates an environment where people learn to build better systems themselves.",
+      "You've taught us to question assumptions. To understand the domain. To think in boundaries. To design before we implement. And to care about the systems we're building — not just the code we're writing."
+    ],
+    "closingLesson": "Those lessons will travel much further than any project we've built together.",
+    "birthdayWish": "Happy Birthday, Kevin! 🎂",
+    "signoff": "From all of us at Team Zenmonk ❤️",
+    "buttonText": "Launch Celebration 🎉"
+  },
+  "celebration": {
+    "heading": "Happy Birthday Kevin! 🎉",
+    "subheading": "Wishing you an extraordinary year filled with joy, great architecture, and great adventures.",
+    "modesLabel": "Select Celebration Style",
+    "replayPrompt": "Every click triggers another celebration. Try them all!",
+    "restartButtonText": "Replay Entire Journey",
     "modes": [
-      { "id": "normal", "label": "Normal", "description": "Classic confetti", "iconName": "Disc" },
-      { "id": "fancy", "label": "Fancy", "description": "Stars & sparkles", "iconName": "Sparkles" },
-      { "id": "fireworks", "label": "Fireworks", "description": "Radial night sky bursts", "iconName": "FlameKindling" },
-      { "id": "balloons", "label": "Balloons", "description": "Rising festive balloons", "iconName": "Balloon" },
-      { "id": "party", "label": "Party", "description": "Maximum energy celebration", "iconName": "PartyPopper" }
+      {
+        "id": "normal",
+        "label": "Normal 🎉",
+        "description": "Classic elegant confetti burst with warm festive ribbons",
+        "iconName": "Sparkles"
+      },
+      {
+        "id": "fancy",
+        "label": "Fancy ✨",
+        "description": "Multi-stage golden sparkles, stars, and radiant bursts",
+        "iconName": "Star"
+      },
+      {
+        "id": "fireworks",
+        "label": "Fireworks 🎆",
+        "description": "High-altitude dual explosive fireworks display",
+        "iconName": "Flame"
+      },
+      {
+        "id": "balloons",
+        "label": "Balloons 🎈",
+        "description": "Gentle upward rising colorful balloons with natural sway",
+        "iconName": "Heart"
+      },
+      {
+        "id": "party",
+        "label": "Party Mode 🚀",
+        "description": "Full combination: confetti + fireworks + sparkles + balloons",
+        "iconName": "Zap"
+      }
     ]
   }
 }
-

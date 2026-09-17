@@ -1,205 +1,210 @@
 {
   "brand": {
-    "name": "CORE SYSTEM",
-    "subtext": "INTERNAL RUNTIME",
-    "badge": "SYSTEM READY",
-    "madeWith": "Built with precision",
-    "forPerson": "System Core"
+    "name": "Acme Corp",
+    "subtext": "Engineering Workspace",
+    "badge": "System Core",
+    "teamTagline": "Internal Development Preview",
+    "madeWith": "Standard boilerplate configuration",
+    "forPerson": "User 001"
   },
-  "person": {
-    "name": "System Administrator",
-    "role": "Lead Architect"
+  "hero": {
+    "badge": "System Status Notice",
+    "greetingPrefix": "RELEASE STATUS",
+    "greetingHighlight": "ACTIVE",
+    "name": "System Node",
+    "subtext": "Automated pipeline validation completed.",
+    "buttonText": "View Release Overview",
+    "cardNote": "Environment Node Alpha"
   },
-  "release": {
-    "version": "v1.0.0",
-    "environment": "STAGING",
-    "initiatedBy": "DEVOPS AGENT",
-    "priority": "STANDARD",
-    "tagline": "Quarterly Service Updates",
-    "headline": "A SYSTEM DEPLOYMENT",
-    "headlineHighlight": "IS READY.",
-    "description": "The engineering team has finalized the standard quarterly release. All unit and integration suites have passed. Awaiting final runtime execution.",
-    "status": "Stable",
-    "nextMilestone": "Scheduled Maintenance v1.1.0",
-    "categories": [
-      {
-        "title": "Added",
-        "type": "added",
-        "items": [
-          "Enhanced logging and telemetry metrics pipeline",
-          "Asynchronous message worker queue optimizations",
-          "Improved database connection pooling limits",
-          "Automated health check probes and alerts"
-        ]
-      },
-      {
-        "title": "Improved",
-        "type": "improved",
-        "items": [
-          "HTTP request serialization performance",
-          "Memory footprint of cache manager daemon",
-          "Query index coverage on primary event tables",
-          "Garbage collection threshold parameters"
-        ]
-      },
-      {
-        "title": "Known Issues",
-        "type": "issues",
-        "items": [
-          "Legacy clients may report intermittent timeouts during warmup",
-          "Log aggregation worker occasionally lags under high throughput",
-          "Diagnostic endpoints require elevated permissions"
-        ]
-      }
-    ]
-  },
-  "deployment": {
-    "terminalCommand": "$ sys-deploy --target=core --version=v1.0.0 --env=staging",
-    "pipelineLabel": "SERVICE INITIALIZATION",
-    "steps": [
-      { "text": "Initializing container environment...", "duration": 300 },
-      { "text": "Loading configuration maps & secrets...", "duration": 350 },
-      { "text": "Verifying database migrations...", "duration": 350 },
-      { "text": "Spawning worker thread pools...", "duration": 350 },
-      { "text": "Attaching HTTP reverse proxy listener...", "duration": 350 },
-      { "text": "Executing smoke tests across microservices...", "duration": 300 },
-      { "text": "Publishing ServiceReadyEvent...", "duration": 300 },
-      { "text": "Deployment successful. Core v1.0.0 is LIVE!", "duration": 400 }
-    ]
+  "story": {
+    "badge": "Overview 01",
+    "title": "System Documentation & Lifecycle",
+    "subtitle": "Reviewing standard operational specifications.",
+    "paragraphs": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    ],
+    "quote": "“Standard operating procedures and modular configuration.”",
+    "buttonText": "Review Modules"
   },
   "legacy": {
     "heading": "Core Engineering Principles",
-    "subheading": "Standard practices across our service architecture",
-    "badge": "ARCHITECTURE SPECS",
-    "centralTheme": "Building resilient, maintainable, and observable distributed systems.",
-    "concepts": [
+    "subheading": "Standard patterns for scalable software systems.",
+    "badge": "Overview 02 — Guidelines",
+    "leadQuote": "“Principles for structured and maintainable system engineering.”",
+    "pillars": [
       {
-        "id": "c1",
-        "title": "Domain Modeling",
-        "tag": "BOUNDARIES",
-        "quote": "Maintain strict separation of business logic and transport infrastructure.",
+        "id": "pattern-a",
+        "title": "Module Boundaries",
+        "tag": "Decoupled Architecture",
+        "quote": "“Maintain strict boundaries across bounded system domains.”",
+        "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        "iconName": "Layers"
+      },
+      {
+        "id": "pattern-b",
+        "title": "Interface Contracts",
+        "tag": "Type Safe Communication",
+        "quote": "“Ensure predictable contracts between distributed services.”",
+        "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         "iconName": "Compass"
       },
       {
-        "id": "c2",
-        "title": "Modular Architecture",
-        "tag": "MODULARITY",
-        "quote": "Encapsulate responsibilities cleanly to reduce coupling across services.",
+        "id": "pattern-c",
+        "title": "State Management",
+        "tag": "Predictable State Machines",
+        "quote": "“Manage lifecycles with deterministic event-driven flows.”",
+        "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
         "iconName": "Boxes"
       },
       {
-        "id": "c3",
-        "title": "System Scalability",
-        "tag": "RELIABILITY",
-        "quote": "Design stateless components capable of horizontal scaling under load.",
-        "iconName": "Network"
+        "id": "pattern-d",
+        "title": "System Observability",
+        "tag": "Telemetry & Metrics",
+        "quote": "“Monitor performance and trace requests across boundaries.”",
+        "description": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores.",
+        "iconName": "Cpu"
       },
       {
-        "id": "c4",
-        "title": "Root-Cause Analysis",
-        "tag": "INVESTIGATION",
-        "quote": "Investigate incidents systematically to fix root issues rather than symptoms.",
-        "iconName": "HelpCircle"
-      },
-      {
-        "id": "c5",
-        "title": "Code Quality",
-        "tag": "STANDARDS",
-        "quote": "Prioritize automated testing, linting, and continuous code reviews.",
-        "iconName": "Layers"
+        "id": "pattern-e",
+        "title": "Continuous Testing",
+        "tag": "Automated Quality Gates",
+        "quote": "“Verify invariants continuously through automated suites.”",
+        "description": "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.",
+        "iconName": "Sparkles"
       }
     ],
-    "transitionHeader": "Operational Continuity",
-    "transitionText": "These design patterns guide our daily development workflows.",
-    "transitionPunchline": "Standardized across all service repositories.",
-    "transitionLegacy": "Documented in the internal engineering engineering handbook."
+    "transitionLead": "System Progression",
+    "transitionPause1": "Validating baseline configurations.",
+    "transitionPunchline": "Standardized architecture framework applied.",
+    "transitionNote": "Standard operations verified.",
+    "buttonText": "View Module Notes"
   },
   "teamMessages": {
-    "heading": "Contributor Notes",
-    "subheading": "Release sign-offs from maintainers and code owners",
-    "badge": "CODE REVIEWS",
-    "buttonText": "VIEW TELEMETRY STATUS",
+    "heading": "Module Feedback & Review Logs",
+    "subheading": "Peer comments and integration notes.",
+    "badge": "Overview 03 — Review",
+    "chandanLetter": {
+      "salutation": "To Reviewer,",
+      "paragraphs": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.",
+        "Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa.",
+        "Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+        "Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.",
+        "Regards, Developer"
+      ],
+      "author": "Contributor A",
+      "role": "Core Team"
+    },
     "members": [
       {
-        "id": "dev1",
-        "name": "Service Lead",
-        "role": "Core Architecture",
-        "avatarBg": "from-slate-600 to-slate-800",
-        "message": "All regression benchmarks completed within acceptable SLA thresholds. Ready for production rollout."
+        "id": "member-1",
+        "name": "Contributor B",
+        "role": "Software Engineer",
+        "avatarBg": "from-slate-500 to-slate-700",
+        "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus ullamcorper dictum.",
+        "tags": ["Integration", "Feedback"]
       },
       {
-        "id": "dev2",
-        "name": "Backend Maintainer",
-        "role": "Data Services",
-        "avatarBg": "from-blue-600 to-indigo-800",
-        "message": "Database migrations verified on staging instances. Read replicas synchronized with primary cluster."
+        "id": "member-2",
+        "name": "Contributor C",
+        "role": "QA Engineer",
+        "avatarBg": "from-slate-500 to-slate-700",
+        "message": "Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet.",
+        "tags": ["Quality", "Review"]
       },
       {
-        "id": "dev3",
-        "name": "QA Specialist",
-        "role": "Quality Assurance",
-        "avatarBg": "from-emerald-600 to-teal-800",
-        "message": "Automated end-to-end test scenarios passed with 100% test coverage across core routes."
+        "id": "member-3",
+        "name": "Contributor D",
+        "role": "DevOps",
+        "avatarBg": "from-slate-500 to-slate-700",
+        "message": "Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.",
+        "tags": ["Pipeline", "Config"]
       }
-    ]
+    ],
+    "buttonText": "View System Telemetry"
   },
   "ctoStatus": {
-    "heading": "CLUSTER TELEMETRY STATUS",
-    "subheading": "Real-time resource utilization and node health metrics",
-    "badge": "TELEMETRY SPECS",
-    "panelTitle": "NODE METRICS",
-    "panelStatus": "ALL VECTORS OPTIMAL",
+    "heading": "NODE TELEMETRY STATUS",
+    "subheading": "Operational indicators and runtime telemetry",
+    "badge": "Overview 04 — Diagnostics",
+    "panelTitle": "Cluster Runtime Monitor",
     "healthStatus": "OPERATIONAL",
-    "uptime": "UPTIME: 99.99% (ANNUAL AVG)",
-    "systemStatusNote": "All cluster workers operating within normal memory and CPU thresholds.",
+    "uptime": "99.98% SLA",
+    "systemStatusNote": "All mock cluster services reporting nominal parameters.",
+    "easterEgg": {
+      "event": "MockServiceDeployed",
+      "aggregate": "ClusterNode01",
+      "command": "ExecuteBenchmark",
+      "status": "COMPLETED",
+      "checks": [
+        "Configuration parsed",
+        "Schema verified",
+        "Dependencies linked",
+        "Mock payload sent"
+      ]
+    },
     "metrics": [
-      { "label": "CPU UTILIZATION", "value": 42, "highlight": false },
-      { "label": "MEMORY POOL", "value": 68, "highlight": false },
-      { "label": "DISK I/O BANDWIDTH", "value": 35, "highlight": false },
-      { "label": "NETWORK THROUGHPUT", "value": 85, "highlight": true },
-      { "label": "CACHE HIT RATIO", "value": 94, "highlight": true }
-    ]
+      {"label": "THROUGHPUT", "value": 100, "highlight": true},
+      {"label": "MEMORY USAGE", "value": 85, "highlight": false},
+      {"label": "CACHE HIT RATIO", "value": 98, "highlight": true},
+      {"label": "REPLICATION", "value": 100, "highlight": true},
+      {"label": "QUEUE LATENCY", "value": 92, "highlight": false},
+      {"label": "AVAILABILITY", "value": 100, "highlight": true}
+    ],
+    "buttonText": "Proceed to Summary"
   },
   "finalMessage": {
-    "badge": "MAINTENANCE SUMMARY",
-    "heading": "System Maintenance Completed",
-    "subheading": "All scheduled runtime services have been successfully updated.",
-    "bulletPoints": [
-      "All service dependencies loaded cleanly.",
-      "Database schema migrations completed with zero downtime.",
-      "Background workers active and consuming queues.",
-      "Security policies and access tokens renewed.",
-      "Log streams forwarding to central monitoring cluster."
+    "badge": "Overview 05 — Conclusion",
+    "heading": "Summary of Evaluation",
+    "paragraphs": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.",
+      "Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim."
     ],
-    "closingQuote": "System stability confirmed across all available nodes.",
-    "gratitude": "Operational Report",
-    "greeting": "System Deployment Complete",
-    "subtext": "Engineering Infrastructure Team",
-    "buttonText": "TRIGGER TEST SUITE"
+    "closingLesson": "Continuous iteration yields resilient architectures.",
+    "birthdayWish": "Evaluation Concluded Successfully.",
+    "signoff": "Acme Engineering Workspace",
+    "buttonText": "Launch Visualizer"
   },
   "celebration": {
-    "heading": "DEPLOYMENT COMPLETE",
-    "deploymentStatusText": "Service pipeline executed with exit code 0.",
-    "statusLabel": "System Status",
-    "statusValue": "100% OPERATIONAL",
-    "nextReleaseLabel": "Next Scheduled Release:",
-    "nextReleaseText": "v1.1.0-RC1",
-    "buttonText": "RE-RUN TEST SUITE",
-    "modesLabel": "ANIMATION STYLES",
-    "replaySurpriseText": "RELOAD SUMMARY",
-    "domainEvent": {
-      "event": "ServiceDeployedEvent",
-      "aggregate": "ClusterNode",
-      "command": "ExecuteDeployment",
-      "status": "COMPLETED"
-    },
+    "heading": "Simulation Complete",
+    "subheading": "All metrics and tests concluded with expected values.",
+    "modesLabel": "Select Animation Pattern",
+    "replayPrompt": "Trigger mock animation routines below.",
+    "restartButtonText": "Restart Walkthrough",
     "modes": [
-      { "id": "normal", "label": "Standard", "description": "Standard particles", "iconName": "Disc" },
-      { "id": "fancy", "label": "Enhanced", "description": "Extended particles", "iconName": "Sparkles" },
-      { "id": "fireworks", "label": "Burst", "description": "Radial test bursts", "iconName": "FlameKindling" },
-      { "id": "balloons", "label": "Float", "description": "Floating elements", "iconName": "Balloon" },
-      { "id": "party", "label": "Full Run", "description": "Complete diagnostic run", "iconName": "PartyPopper" }
+      {
+        "id": "normal",
+        "label": "Standard",
+        "description": "Standard particle emitter animation",
+        "iconName": "Sparkles"
+      },
+      {
+        "id": "fancy",
+        "label": "Enhanced",
+        "description": "Extended particle simulation with gold particles",
+        "iconName": "Star"
+      },
+      {
+        "id": "fireworks",
+        "label": "Burst",
+        "description": "High velocity particle dispersal",
+        "iconName": "Flame"
+      },
+      {
+        "id": "balloons",
+        "label": "Float",
+        "description": "Vertical floating element simulation",
+        "iconName": "Heart"
+      },
+      {
+        "id": "party",
+        "label": "Combined",
+        "description": "Full composite animation routine",
+        "iconName": "Zap"
+      }
     ]
   }
 }
-

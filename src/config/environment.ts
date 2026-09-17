@@ -5,3 +5,4 @@ export const IS_PRODUCTION = APP_ENV === 'production';
 export const ACCESS_PASSWORD =
   import.meta.env.VITE_ACCESS_PASSWORD || (IS_PRODUCTION ? 'launch' : 'password');
 
+export const getAccessPassword = (): string => ACCESS_PASSWORD;
