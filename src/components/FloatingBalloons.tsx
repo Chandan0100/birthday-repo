@@ -17,13 +17,13 @@ interface FloatingBalloonsProps {
 }
 
 const BALLOON_COLORS = [
-  '#f97316', // Zenmonk orange
-  '#ff6b00', // Deep orange
-  '#fbbf24', // Amber/gold
-  '#ea580c', // Warm rust
-  '#38bdf8', // Sky blue accent
-  '#ef4444', // Warm crimson
-  '#10b981', // Emerald
+  '#00FF66', // Neon green
+  '#39FF88', // Light neon
+  '#FFD166', // Warm celebratory gold
+  '#FFDC85', // Soft amber gold
+  '#00D957', // Forest neon
+  '#38BDF8', // Cool cyan accent
+  '#FF4D4D', // Coral red accent
 ];
 
 export const FloatingBalloons: React.FC<FloatingBalloonsProps> = ({ triggerKey, count = 14 }) => {
@@ -35,7 +35,7 @@ export const FloatingBalloons: React.FC<FloatingBalloonsProps> = ({ triggerKey, 
     const newBalloons: BalloonItem[] = Array.from({ length: count }).map((_, i) => ({
       id: `${triggerKey}-${i}-${Date.now()}`,
       leftPercent: 5 + Math.random() * 90,
-      size: 40 + Math.random() * 26,
+      size: 42 + Math.random() * 24,
       color: BALLOON_COLORS[Math.floor(Math.random() * BALLOON_COLORS.length)],
       duration: 4.5 + Math.random() * 2.5,
       swayAmount: 15 + Math.random() * 25,
@@ -80,7 +80,7 @@ export const FloatingBalloons: React.FC<FloatingBalloonsProps> = ({ triggerKey, 
             <svg
               viewBox="0 0 100 130"
               className="w-full h-full drop-shadow-md"
-              style={{ filter: `drop-shadow(0 4px 10px ${b.color}40)` }}
+              style={{ filter: `drop-shadow(0 4px 10px ${b.color}35)` }}
             >
               <defs>
                 <radialGradient id={`shine-${b.id}`} cx="35%" cy="30%" r="60%">
@@ -107,4 +107,3 @@ export const FloatingBalloons: React.FC<FloatingBalloonsProps> = ({ triggerKey, 
     </div>
   );
 };
-

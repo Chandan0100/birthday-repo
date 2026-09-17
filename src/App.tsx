@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { BackgroundGlow } from './components/BackgroundGlow';
+import { DoodleOverlay } from './components/Doodles/DoodleOverlay';
 import { Header } from './components/Header';
 import { PasswordGate } from './components/PasswordGate';
 import { SecretDeployment } from './components/SecretDeployment';
@@ -37,9 +38,12 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#090b0e] text-slate-100 flex flex-col justify-between selection:bg-zen-500/30 selection:text-zen-200 relative overflow-x-hidden">
+    <div className="min-h-screen bg-[#050505] text-[#F5F5F5] flex flex-col justify-between selection:bg-[#00FF66]/25 selection:text-[#00FF66] relative overflow-x-hidden">
       {/* Background Visual Effects (Only rendered after unlocking) */}
-      {stage > 0 && <BackgroundGlow />}
+      {stage > 0 && <BackgroundGlow stage={stage} />}
+
+      {/* Progressive Hand-Drawn Doodles / Annotations */}
+      {stage > 0 && <DoodleOverlay stage={stage} />}
 
       {/* Header bar (Visible once authenticated) */}
       {stage > 0 && (
@@ -51,7 +55,7 @@ export function App() {
       )}
 
       {/* Main Experience Flow */}
-      <main className={`flex-1 flex flex-col justify-center ${stage > 0 ? 'pt-20 pb-12' : ''}`}>
+      <main className={`flex-1 flex flex-col justify-center relative z-10 ${stage > 0 ? 'pt-20 pb-12' : ''}`}>
         <AnimatePresence mode="wait">
           {stage === 0 && (
             <motion.div

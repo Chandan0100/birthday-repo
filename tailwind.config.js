@@ -7,26 +7,36 @@ export default {
   theme: {
     extend: {
       colors: {
+        neon: {
+          DEFAULT: '#00FF66',
+          300: '#7CFFB2',
+          400: '#39FF88',
+          500: '#00FF66',
+          600: '#00D957',
+        },
         zen: {
-          50: '#fff7ed',
-          100: '#ffedd5',
-          200: '#fed7aa',
-          300: '#fdba74',
-          400: '#fb923c',
-          500: '#f97316',
-          600: '#ea580c',
-          700: '#c2410c',
-          800: '#9a3412',
-          900: '#7c2d12',
-          DEFAULT: '#ff6b00',
+          DEFAULT: '#00FF66',
+          400: '#39FF88',
+          500: '#00FF66',
+          600: '#00D957',
+        },
+        gold: {
+          DEFAULT: '#FFD166',
+          300: '#FFE6A3',
+          400: '#FFDC85',
+          500: '#FFD166',
+          600: '#F5BE47',
         },
         dark: {
-          bg: '#0a0c10',
-          card: '#12161f',
-          surface: '#181e2b',
-          border: '#222938',
-          muted: '#8590a6',
-        }
+          950: '#050505',
+          900: '#080808',
+          850: '#0B0D0C',
+          800: '#101312',
+          700: '#181C1B',
+          border: '#1F2624',
+          muted: '#666666',
+          subtle: '#A0A0A0',
+        },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
@@ -34,16 +44,15 @@ export default {
       },
       animation: {
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'glow': 'glow 2s ease-in-out infinite alternate',
+        'neon-glow': 'neonGlow 2s ease-in-out infinite alternate',
       },
       keyframes: {
-        glow: {
-          '0%': { boxShadow: '0 0 15px rgba(249, 115, 22, 0.2)' },
-          '100%': { boxShadow: '0 0 30px rgba(249, 115, 22, 0.6)' },
+        neonGlow: {
+          '0%': { boxShadow: '0 0 10px rgba(0, 255, 102, 0.15)' },
+          '100%': { boxShadow: '0 0 25px rgba(0, 255, 102, 0.4)' },
         }
       }
     },
   },
   plugins: [],
 }
-

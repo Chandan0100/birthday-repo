@@ -37,14 +37,14 @@ export const CtoSystemStatus: React.FC<CtoSystemStatusProps> = ({ onNext }) => {
       >
         {/* Header */}
         <motion.div variants={itemVariants} className="text-center space-y-3">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-zen-500/10 border border-zen-500/30 text-zen-400 font-mono text-xs">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#00FF66]/10 border border-[#00FF66]/30 text-[#00FF66] font-mono text-xs">
             <Activity className="w-3.5 h-3.5" />
             <span>{ctoStatus.badge}</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#F5F5F5] tracking-tight">
             {ctoStatus.heading}
           </h1>
-          <p className="text-slate-400 font-mono text-xs sm:text-sm">
+          <p className="text-[#A0A0A0] font-mono text-xs sm:text-sm">
             {ctoStatus.subheading}
           </p>
         </motion.div>
@@ -56,35 +56,35 @@ export const CtoSystemStatus: React.FC<CtoSystemStatusProps> = ({ onNext }) => {
             variants={itemVariants}
             className="md:col-span-2 glass-panel rounded-2xl p-6 sm:p-8 space-y-5 border border-white/5"
           >
-            <div className="flex items-center justify-between pb-3 border-b border-white/5 font-mono text-xs text-slate-400">
+            <div className="flex items-center justify-between pb-3 border-b border-white/5 font-mono text-xs text-[#A0A0A0]">
               <div className="flex items-center space-x-2">
-                <Cpu className="w-4 h-4 text-zen-400" />
+                <Cpu className="w-4 h-4 text-[#00FF66]" />
                 <span>{ctoStatus.panelTitle}</span>
               </div>
-              <span className="text-emerald-400 font-semibold">{ctoStatus.panelStatus}</span>
+              <span className="text-[#00FF66] font-semibold">{ctoStatus.panelStatus}</span>
             </div>
 
             <div className="space-y-4">
               {systemMetrics.map((metric, idx) => (
                 <div key={metric.label} className="space-y-1.5 font-mono">
                   <div className="flex justify-between items-center text-xs">
-                    <span className="text-slate-300 font-medium tracking-wider">
+                    <span className="text-[#F5F5F5] font-medium tracking-wider">
                       {metric.label}
                     </span>
-                    <span className={`font-bold ${metric.highlight ? 'text-zen-400' : 'text-emerald-400'}`}>
+                    <span className={`font-bold ${metric.highlight ? 'text-[#00FF66]' : 'text-[#39FF88]'}`}>
                       {metric.value}%
                     </span>
                   </div>
 
-                  <div className="h-3 bg-black/50 rounded-full overflow-hidden p-0.5 border border-white/5">
+                  <div className="h-3 bg-[#050505] rounded-full overflow-hidden p-0.5 border border-white/5">
                     <motion.div
                       initial={{ width: 0 }}
                       animate={{ width: `${metric.value}%` }}
                       transition={{ duration: 1, delay: 0.2 + idx * 0.1, ease: 'easeOut' }}
                       className={`h-full rounded-full ${
                         metric.highlight
-                          ? 'bg-gradient-to-r from-zen-500 to-amber-400'
-                          : 'bg-gradient-to-r from-emerald-500 to-teal-400'
+                          ? 'bg-gradient-to-r from-[#00D957] to-[#00FF66]'
+                          : 'bg-gradient-to-r from-[#00D957] to-[#7CFFB2]'
                       }`}
                     />
                   </div>
@@ -96,28 +96,28 @@ export const CtoSystemStatus: React.FC<CtoSystemStatusProps> = ({ onNext }) => {
           {/* Health & Diagnostic Panel (1 column on md) */}
           <motion.div
             variants={itemVariants}
-            className="glass-panel-glow rounded-2xl p-6 flex flex-col justify-between border border-zen-500/20"
+            className="glass-panel-neon rounded-2xl p-6 flex flex-col justify-between border border-[#00FF66]/20"
           >
             <div className="space-y-6 text-center">
-              <div className="font-mono text-xs text-slate-400 uppercase tracking-widest">
+              <div className="font-mono text-xs text-[#A0A0A0] uppercase tracking-widest">
                 SYSTEM STATUS
               </div>
 
               {/* Pulsing Radar Node */}
               <div className="relative w-28 h-28 mx-auto flex items-center justify-center">
-                <div className="absolute inset-0 rounded-full bg-emerald-500/10 animate-ping" />
-                <div className="absolute inset-2 rounded-full bg-emerald-500/20 animate-pulse" />
-                <div className="w-16 h-16 rounded-full bg-emerald-500/30 border border-emerald-400/50 flex items-center justify-center text-emerald-300 shadow-xl shadow-emerald-500/20">
+                <div className="absolute inset-0 rounded-full bg-[#00FF66]/10 animate-ping" />
+                <div className="absolute inset-2 rounded-full bg-[#00FF66]/20 animate-pulse" />
+                <div className="w-16 h-16 rounded-full bg-[#00FF66]/25 border border-[#00FF66]/50 flex items-center justify-center text-[#00FF66] shadow-xl shadow-[#00FF66]/20">
                   <ShieldCheck className="w-8 h-8" />
                 </div>
               </div>
 
               <div>
-                <div className="font-mono text-xl font-bold text-emerald-400 tracking-wider flex items-center justify-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 inline-block animate-pulse" />
+                <div className="font-mono text-xl font-bold text-[#00FF66] tracking-wider flex items-center justify-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#00FF66] inline-block animate-pulse" />
                   {ctoStatus.healthStatus}
                 </div>
-                <div className="text-[11px] font-mono text-slate-400 mt-1">
+                <div className="text-[11px] font-mono text-[#A0A0A0] mt-1">
                   {ctoStatus.uptime}
                 </div>
               </div>
@@ -125,8 +125,8 @@ export const CtoSystemStatus: React.FC<CtoSystemStatusProps> = ({ onNext }) => {
 
             {/* Sub-note */}
             <div className="pt-4 mt-6 border-t border-white/10 text-center">
-              <div className="text-xs text-slate-400 font-mono flex items-center justify-center gap-1.5 text-left">
-                <AlertCircle className="w-3.5 h-3.5 text-zen-400 flex-shrink-0" />
+              <div className="text-xs text-[#A0A0A0] font-mono flex items-center justify-center gap-1.5 text-left">
+                <AlertCircle className="w-3.5 h-3.5 text-[#00FF66] flex-shrink-0" />
                 <span className="text-[11px]">{systemStatusNote}</span>
               </div>
             </div>
@@ -137,7 +137,7 @@ export const CtoSystemStatus: React.FC<CtoSystemStatusProps> = ({ onNext }) => {
         <motion.div variants={itemVariants} className="pt-2 flex justify-center">
           <button
             onClick={onNext}
-            className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-zen-500 to-orange-500 hover:from-zen-400 hover:to-orange-400 text-slate-950 font-mono text-xs sm:text-sm font-bold tracking-wider uppercase flex items-center space-x-2 transition-all shadow-lg shadow-zen-500/20 active:scale-95"
+            className="px-8 py-3.5 rounded-xl bg-[#00FF66] hover:bg-[#39FF88] text-[#050505] font-mono text-xs sm:text-sm font-bold tracking-wider uppercase flex items-center space-x-2 transition-all shadow-lg shadow-[#00FF66]/20 active:scale-95"
           >
             <span>CONTINUE →</span>
             <ArrowRight className="w-4 h-4" />

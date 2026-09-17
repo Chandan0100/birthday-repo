@@ -40,16 +40,16 @@ export const DeploymentTerminal: React.FC<DeploymentTerminalProps> = ({ onComple
         transition={{ duration: 0.5 }}
         className="w-full max-w-2xl"
       >
-        <div className="rounded-2xl bg-[#0b0e14] border border-white/10 shadow-2xl overflow-hidden font-mono">
+        <div className="rounded-2xl bg-[#080808] border border-white/10 shadow-2xl overflow-hidden font-mono">
           {/* Terminal Titlebar */}
-          <div className="flex items-center justify-between px-4 py-3 bg-[#111622] border-b border-white/5">
+          <div className="flex items-center justify-between px-4 py-3 bg-[#0d0f0e] border-b border-white/5">
             <div className="flex items-center space-x-2">
-              <span className="w-3 h-3 rounded-full bg-red-500/80 inline-block" />
-              <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block" />
-              <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
-              <span className="text-slate-400 text-xs pl-2 font-medium">bash - deployment-agent v2.4</span>
+              <span className="w-3 h-3 rounded-full bg-[#FF4D4D]/80 inline-block" />
+              <span className="w-3 h-3 rounded-full bg-[#FFD166]/80 inline-block" />
+              <span className="w-3 h-3 rounded-full bg-[#00FF66]/80 inline-block" />
+              <span className="text-[#A0A0A0] text-xs pl-2 font-medium">bash - deployment-agent v2.4</span>
             </div>
-            <div className="flex items-center space-x-2 text-xs text-zen-400">
+            <div className="flex items-center space-x-2 text-xs text-[#00FF66]">
               <Terminal className="w-3.5 h-3.5" />
               <span>CI/CD RUNNING</span>
             </div>
@@ -57,7 +57,7 @@ export const DeploymentTerminal: React.FC<DeploymentTerminalProps> = ({ onComple
 
           {/* Terminal Console Logs */}
           <div className="p-6 md:p-8 space-y-3.5 min-h-[340px] text-xs sm:text-sm">
-            <div className="text-slate-500 pb-2 border-b border-white/5">
+            <div className="text-[#666666] pb-2 border-b border-white/5">
               {content.deployment.terminalCommand}
             </div>
 
@@ -77,11 +77,11 @@ export const DeploymentTerminal: React.FC<DeploymentTerminalProps> = ({ onComple
                 >
                   <div className="mt-0.5 flex-shrink-0">
                     {isDone ? (
-                      <span className="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                      <span className="w-4 h-4 rounded-full bg-[#00FF66]/20 text-[#00FF66] flex items-center justify-center">
                         <Check className="w-3 h-3 stroke-[3]" />
                       </span>
                     ) : isCurrent ? (
-                      <span className="w-4 h-4 rounded-full bg-zen-500/20 text-zen-400 flex items-center justify-center">
+                      <span className="w-4 h-4 rounded-full bg-[#00FF66]/20 text-[#00FF66] flex items-center justify-center">
                         <Loader2 className="w-3 h-3 animate-spin" />
                       </span>
                     ) : null}
@@ -91,9 +91,9 @@ export const DeploymentTerminal: React.FC<DeploymentTerminalProps> = ({ onComple
                     className={`${
                       isDone
                         ? idx === steps.length - 1
-                          ? 'text-emerald-300 font-bold'
-                          : 'text-slate-300'
-                        : 'text-zen-400 font-medium'
+                          ? 'text-[#00FF66] font-bold'
+                          : 'text-[#F5F5F5]'
+                        : 'text-[#39FF88] font-medium'
                     }`}
                   >
                     {step.text}
@@ -105,15 +105,15 @@ export const DeploymentTerminal: React.FC<DeploymentTerminalProps> = ({ onComple
           </div>
 
           {/* Progress Bar Footer */}
-          <div className="p-4 bg-[#0d121c] border-t border-white/5 space-y-3">
-            <div className="flex justify-between items-center text-xs text-slate-400">
-              <span>DEPLOYMENT PIPELINE</span>
-              <span className="font-semibold text-zen-400">{progress}%</span>
+          <div className="p-4 bg-[#0d0f0e] border-t border-white/5 space-y-3">
+            <div className="flex justify-between items-center text-xs text-[#A0A0A0]">
+              <span>{content.deployment.pipelineLabel}</span>
+              <span className="font-semibold text-[#00FF66]">{progress}%</span>
             </div>
             
-            <div className="w-full h-2 bg-slate-800/80 rounded-full overflow-hidden p-0.5">
+            <div className="w-full h-2 bg-[#181c1b] rounded-full overflow-hidden p-0.5">
               <motion.div
-                className="h-full bg-gradient-to-r from-zen-500 via-amber-400 to-emerald-400 rounded-full"
+                className="h-full bg-gradient-to-r from-[#00D957] via-[#00FF66] to-[#7CFFB2] rounded-full"
                 animate={{ width: `${progress}%` }}
                 transition={{ duration: 0.3 }}
               />
@@ -127,7 +127,7 @@ export const DeploymentTerminal: React.FC<DeploymentTerminalProps> = ({ onComple
               >
                 <button
                   onClick={onComplete}
-                  className="px-4 py-2 rounded-xl bg-zen-500/20 hover:bg-zen-500/30 border border-zen-500/40 text-zen-300 text-xs font-semibold flex items-center space-x-2 transition-all"
+                  className="px-4 py-2 rounded-xl bg-[#00FF66]/15 hover:bg-[#00FF66]/25 border border-[#00FF66]/40 text-[#00FF66] text-xs font-semibold flex items-center space-x-2 transition-all"
                 >
                   <span>CONTINUE TO RELEASE NOTES</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -140,4 +140,3 @@ export const DeploymentTerminal: React.FC<DeploymentTerminalProps> = ({ onComple
     </div>
   );
 };
-
