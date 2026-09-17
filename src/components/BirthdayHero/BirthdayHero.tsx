@@ -6,7 +6,8 @@ import {
   SparkleDoodle,
   StarDoodle,
   HeartDoodle,
-  BalloonDoodle
+  BalloonDoodle,
+  CakeDoodle,
 } from '../Doodles/DoodleIcons';
 import { ProfilePhoto } from '../Common/ProfilePhoto';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
@@ -109,13 +110,12 @@ export const BirthdayHero: React.FC<BirthdayHeroProps> = ({ onNext }) => {
           <span>{hero.badge}</span>
         </motion.div>
 
-        {/* Kevin's Profile Photograph (Circular Crop with clean white border and warm glow) */}
-        {/* Profile Photograph (Circular Crop with clean white border and warm glow) */}
+        {/* Profile Photograph & Celebration Cake */}
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="flex justify-center mb-4"
+          className="flex items-center justify-center gap-4 mb-4"
         >
           <ProfilePhoto
             src={hero.photoUrl}
@@ -124,6 +124,12 @@ export const BirthdayHero: React.FC<BirthdayHeroProps> = ({ onNext }) => {
             shape="circle"
             showGlow={true}
           />
+          <motion.div
+            animate={{ rotate: [-3, 3, -3], y: [0, -3, 0] }}
+            transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+          >
+            <CakeDoodle className="w-14 h-14 sm:w-16 sm:h-16" />
+          </motion.div>
         </motion.div>
 
         {/* Focal Headline */}
@@ -136,9 +142,12 @@ export const BirthdayHero: React.FC<BirthdayHeroProps> = ({ onNext }) => {
           <p className="text-xs sm:text-sm font-mono tracking-[0.2em] text-[#A8A29E] uppercase mb-1">
             {hero.greetingPrefix}
           </p>
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif font-black tracking-tight text-[#1C1917] leading-tight">
-            <span className="bg-gradient-to-r from-[#1C1917] via-[#EA580C] to-[#1C1917] bg-clip-text text-transparent">
-              {hero.greetingHighlight}
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif font-black tracking-tight leading-tight">
+            <span className="bg-gradient-to-r from-[#EA580C] via-[#F97316] to-[#FF9F1C] bg-clip-text text-transparent">
+              {hero.greetingHighlight.replace('🎂', '').trim()}
+            </span>{' '}
+            <span className="inline-block text-4xl sm:text-6xl md:text-7xl">
+              🎂
             </span>
           </h1>
         </motion.div>
