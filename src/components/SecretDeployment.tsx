@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Rocket, ArrowRight, Server, Shield, Sparkles, Cpu } from 'lucide-react';
+import { ZenmonkLogo } from './ZenmonkLogo';
 import { BIRTHDAY_CONFIG } from '../config/birthdayData';
 
 interface SecretDeploymentProps {
@@ -20,11 +21,15 @@ export const SecretDeployment: React.FC<SecretDeploymentProps> = ({ onDeploy }) 
           {/* Subtle background glow circle */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-zen-500/10 rounded-full blur-3xl pointer-events-none" />
 
-          {/* Top Tag */}
+          {/* Top Tag & Zenmonk mark */}
           <div className="flex items-center justify-between mb-8 pb-4 border-b border-white/10">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-zen-500/10 border border-zen-500/30 text-zen-400 font-mono text-xs">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>CONFIDENTIAL PIPELINE</span>
+            <div className="flex items-center space-x-3">
+              <ZenmonkLogo size="sm" showWordmark={true} />
+              <span className="hidden sm:inline text-white/20">|</span>
+              <div className="hidden sm:inline-flex items-center space-x-2 px-2.5 py-0.5 rounded-full bg-zen-500/10 border border-zen-500/30 text-zen-400 font-mono text-xs">
+                <Sparkles className="w-3 h-3" />
+                <span>INTERNAL PIPELINE</span>
+              </div>
             </div>
             <div className="font-mono text-xs text-slate-500 flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />

@@ -20,7 +20,7 @@ export const BIRTHDAY_CONFIG = {
   teamName: "Team Zenmonk",
   releaseVersion: "v2026.09.17",
   environment: "PRODUCTION",
-  initiatedBy: "THE TEAM",
+  initiatedBy: "TEAM ZENMONK",
   priority: "VERY HIGH",
   releaseDate: "September 17, 2026",
 

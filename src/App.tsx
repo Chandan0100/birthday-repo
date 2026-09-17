@@ -10,6 +10,7 @@ import { TeamMessages } from './components/TeamMessages';
 import { CtoSystemStatus } from './components/CtoSystemStatus';
 import { RealMessage } from './components/RealMessage';
 import { Celebration } from './components/Celebration';
+import { Footer } from './components/Footer';
 
 export function App() {
   const [stage, setStage] = useState<number>(0);
@@ -148,6 +149,9 @@ export function App() {
           )}
         </AnimatePresence>
       </main>
+
+      {/* Zenmonk Brand Footer */}
+      {stage > 0 && stage < 7 && <Footer />}
     </div>
   );
 }

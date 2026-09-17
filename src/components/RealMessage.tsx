@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, ArrowRight } from 'lucide-react';
+import { ZenmonkLogo } from './ZenmonkLogo';
 import { BIRTHDAY_CONFIG } from '../config/birthdayData';
 
 interface RealMessageProps {
@@ -57,13 +58,16 @@ export const RealMessage: React.FC<RealMessageProps> = ({ onNext }) => {
         </motion.div>
 
         {/* Grand Birthday Greeting */}
-        <motion.div variants={itemVariants} className="space-y-3 pt-2">
+        <motion.div variants={itemVariants} className="space-y-4 pt-2">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight">
             {realMessage.greeting}
           </h1>
-          <p className="text-base sm:text-lg font-medium text-zen-400 flex items-center justify-center gap-2">
-            <span>{realMessage.subtext}</span>
-          </p>
+          <div className="flex flex-col items-center justify-center gap-2 pt-2">
+            <ZenmonkLogo size="sm" showWordmark={true} />
+            <p className="text-sm sm:text-base font-medium text-zen-400">
+              {realMessage.subtext}
+            </p>
+          </div>
         </motion.div>
 
         {/* Action Button */}

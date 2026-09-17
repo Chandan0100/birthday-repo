@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2, RotateCcw, Heart, PartyPopper, Cake, Flame } from 'lucide-react';
+import { ZenmonkLogo } from './ZenmonkLogo';
 import { BIRTHDAY_CONFIG } from '../config/birthdayData';
 import { triggerGrandCelebration, triggerContinuousConfetti } from '../utils/confetti';
 
@@ -127,10 +128,13 @@ export const Celebration: React.FC<CelebrationProps> = ({ onRestart }) => {
           </div>
 
           {/* Signoff */}
-          <div className="pt-4 border-t border-white/5 text-center text-xs font-mono text-slate-500 flex items-center justify-center gap-1.5">
-            <span>Crafted with</span>
-            <Heart className="w-3.5 h-3.5 text-zen-500 fill-current" />
-            <span>by {BIRTHDAY_CONFIG.teamName} for {BIRTHDAY_CONFIG.personName}</span>
+          <div className="pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-slate-400">
+            <ZenmonkLogo size="sm" showWordmark={true} />
+            <div className="flex items-center gap-1.5">
+              <span>Made with</span>
+              <Heart className="w-3.5 h-3.5 text-zen-500 fill-current animate-pulse" />
+              <span>by <strong className="text-white">{BIRTHDAY_CONFIG.teamName}</strong> for <strong className="text-zen-400">{BIRTHDAY_CONFIG.personName}</strong></span>
+            </div>
           </div>
         </div>
       </motion.div>
