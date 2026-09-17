@@ -3,96 +3,127 @@
     "name": "Zenmonk",
     "subtext": "Engineering Team",
     "badge": "Team Zenmonk",
-    "teamTagline": "Built with gratitude by Team Zenmonk",
-    "madeWith": "Crafted with passion, TypeScript & DDD principles",
+    "teamTagline": "Built with appreciation & banter by Team Zenmonk",
+    "madeWith": "Over-engineered with React, TypeScript & DDD jokes",
     "forPerson": "Kevin (CTO)"
   },
   "hero": {
     "badge": "A Special Digital Surprise",
-    "greetingPrefix": "HAPPY BIRTHDAY",
-    "greetingHighlight": "KEVIN",
+    "greetingPrefix": "HAPPY BIRTHDAY,",
+    "greetingHighlight": "KEVIN! 🎂",
     "name": "Kevin",
-    "subtext": "We made something especially for you.",
+    "subtext": "Yes, this entire website is actually for you.",
+    "playfulSubtext": "We considered sending a normal birthday message. Then someone suggested we over-engineer it.",
+    "requirementsTitle": "Birthday Requirements Checklist",
+    "requirements": [
+      "Must be memorable",
+      "Must contain unnecessary engineering",
+      "Must have good UX",
+      "Must have zero production bugs",
+      "Must annoy Kevin just enough 😉"
+    ],
+    "requirementOne": "Requirement #1: Make Kevin smile.",
+    "requirementStatus": "Status: In progress... ⏳",
     "buttonText": "Discover The Story",
-    "cardNote": "From all of us at Team Zenmonk"
+    "cardNote": "From your colleagues & friends at Team Zenmonk"
   },
   "story": {
-    "badge": "Chapter 01",
-    "title": "This isn't just another birthday card.",
-    "subtitle": "We wanted to tell you what you've actually left behind with us.",
+    "badge": "Chapter 01 — Context & Confessions",
+    "title": "We could have just sent you a Slack message.",
+    "subtitle": "But where's the fun in that?",
     "paragraphs": [
-      "When we sat down to think about what to make for your birthday, we realized a standard greeting card or a corporate message wouldn't do justice to the journey we've shared.",
-      "You haven't just managed a team or assigned roadmap deliverables. You've fundamentally shaped how we view software, how we tackle complexity, and how we collaborate every single day."
+      "When we thought about what to do for your birthday, we realized a standard message or corporate gift card would be painfully boring for our team.",
+      "So naturally, we spent engineering hours designing, animating, and deploying an entire digital experience to celebrate you."
     ],
-    "quote": "“You taught us how to build. So we built something for you.”",
-    "buttonText": "See What You Taught Us"
+    "ageGapJoke": {
+      "title": "Team Observability Telemetry",
+      "ageLabel": "AGE DIFFERENCE",
+      "ageValue": "~ 1–2 YEARS",
+      "archLabel": "ARCHITECTURAL OPINIONS",
+      "archValue": "████████████████████ ∞",
+      "punchline": "Somehow you managed to be only slightly older than us and significantly more opinionated about bounded contexts. 😄"
+    },
+    "quote": "“You're barely older than us, but somehow you're already the person making us rethink our architecture.”",
+    "buttonText": "See What We Somehow Learned"
   },
   "legacy": {
-    "heading": "You taught us how to build.",
-    "subheading": "Not just features. Not just applications. Systems.",
-    "badge": "Chapter 02 — Engineering Philosophy",
-    "leadQuote": "“You didn't just teach us how to build software. You taught us how to think about building software.”",
+    "heading": "THINGS WE SOMEHOW LEARNED ALONG THE WAY",
+    "subheading": "A completely unbiased collection of things Kevin has convinced us to care about.",
+    "badge": "Chapter 02 — Architectural Debates",
+    "leadQuote": "“Turns out good engineering isn't just making things work — it's having strong opinions on why it works.”",
     "pillars": [
       {
         "id": "ddd",
         "title": "Domain-Driven Design",
-        "tag": "Ubiquitous Language & Core Domains",
-        "quote": "“You taught us to understand the domain before rushing into the code.”",
-        "description": "To listen to the domain experts, respect the boundaries, and design models that reflect real-world problem spaces rather than database schemas.",
+        "tag": "Ubiquitous Language & Aggregates",
+        "quote": "“Apparently, 'just put it in the service' is not an architecture strategy.”",
+        "caption": "We learned this one the hard way.",
+        "description": "Listening to domain experts, keeping bounded contexts isolated, and realizing that an aggregate root isn't just a fancy folder.",
         "iconName": "Layers"
       },
       {
         "id": "architecture",
         "title": "Software Architecture",
-        "tag": "Bounded Contexts & Clean Decoupling",
-        "quote": "“You taught us to think about boundaries, decisions, and why systems are structured the way they are.”",
-        "description": "Architectural decisions have consequences. You taught us that good structure is about isolating change and making the future easier to navigate.",
+        "tag": "Decoupling & Boundaries",
+        "quote": "“Turns out having folders called domain, application, and infrastructure doesn't automatically mean you have good architecture.”",
+        "caption": "Kevin would probably like us to explain why in our next PR.",
+        "description": "Structuring systems to isolate change, respecting boundaries, and thinking about what happens when requirements inevitably change.",
         "iconName": "Compass"
       },
       {
         "id": "system-design",
         "title": "System Design",
-        "tag": "Resilience, Scale & End-to-End Vision",
-        "quote": "“You taught us to see the entire system, not just the feature in front of us.”",
-        "description": "Looking at asynchronous event streams, state lifecycles, scalability trade-offs, and how each component fits into the grand vision.",
+        "tag": "Resilience & Trade-offs",
+        "quote": "“'It works' and 'it's a good system' are apparently two completely different statements.”",
+        "caption": "A classic Kevin code review insight.",
+        "description": "Looking at asynchronous event streams, state lifecycles, scalability bottlenecks, and trade-offs before writing a single line of code.",
         "iconName": "Boxes"
       },
       {
-        "id": "engineering-thinking",
-        "title": "Engineering Thinking",
-        "tag": "First Principles & Rigorous Inquiry",
-        "quote": "“You taught us to ask 'Why?' before asking 'How?'”",
-        "description": "Challenging initial assumptions, digging to the root of requirements, and making deliberate technical trade-offs with clear intent.",
-        "iconName": "Cpu"
+        "id": "boundaries",
+        "title": "Boundaries",
+        "tag": "Decoupled Dependencies",
+        "quote": "“Kevin has successfully convinced us that everything should not talk to everything else.”",
+        "caption": "Coupling is the real enemy.",
+        "description": "Understanding that just because you can import something doesn't mean you should. Explicit contracts and event-driven decoupled flow.",
+        "iconName": "Shield"
       },
       {
-        "id": "technical-excellence",
-        "title": "Technical Excellence",
-        "tag": "Craftsmanship Beyond Just 'Working'",
-        "quote": "“You taught us that making something work is only the beginning.”",
-        "description": "Code readability, testability, domain expressiveness, and long-term maintainability are where real engineering value lives.",
-        "iconName": "Sparkles"
+        "id": "engineering-thinking",
+        "title": "The Annoying Question",
+        "tag": "First Principles & Inquiry",
+        "quote": "“'Why?' — Somehow this one question has caused more architectural discussions than any framework ever has.”",
+        "caption": "Challenging assumptions before implementing.",
+        "description": "Digging into why a feature needs to be built that way, challenging assumptions, and avoiding unnecessary complexity.",
+        "iconName": "Cpu"
       }
     ],
+    "seriousMoment": {
+      "heading": "But honestly...",
+      "text1": "Somewhere between the architecture debates, DDD discussions, system-design sessions, and all those 'quick' technical conversations...",
+      "punchline": "we actually became better engineers.",
+      "text2": "You've pushed us to question our assumptions, understand the problem before jumping into code, and care about why we're building something — not just whether it works.",
+      "closing": "And that's something we genuinely appreciate."
+    },
     "transitionLead": "And somewhere along the way...",
-    "transitionPause1": "These stopped being things you taught us.",
+    "transitionPause1": "These stopped being random technical debates.",
     "transitionPunchline": "They became the way we build.",
-    "transitionNote": "A mindset forged in architectural rigor and mutual trust.",
+    "transitionNote": "An engineering mindset forged in good humor and architectural rigor.",
     "buttonText": "Read Notes From The Team"
   },
   "teamMessages": {
-    "heading": "Every great system has people behind it.",
-    "subheading": "And every growing engineer has people who helped them get there.",
-    "badge": "Chapter 03 — Team Messages",
+    "heading": "THE PEOPLE WHO HAD TO LISTEN TO ALL OF THIS",
+    "subheading": "A few words from the team.",
+    "badge": "Chapter 03 — Team Banter & Appreciation",
     "chandanLetter": {
       "salutation": "Kevin,",
       "paragraphs": [
-        "Thank you for teaching us to look at software differently.",
-        "DDD, architecture, system design, and all the engineering principles you've shared with us have become much more than technical concepts. They have changed the way we approach problems, make decisions, and think about the systems we build.",
-        "You've pushed us to go beyond simply making things work — to understand the domain, question our decisions, think about boundaries, and care about the quality of what we create.",
-        "More importantly, you've given us the opportunity to learn, experiment, make mistakes, and grow as engineers.",
-        "Thank you for being the person who taught us not just how to build software, but how to think like engineers.",
-        "Happy Birthday, Kevin. ❤️"
+        "You're barely a couple of years ahead of us, but somehow you've managed to be several architectural decisions ahead of us. 😄",
+        "From DDD debates and system-design discussions to questioning why we built something the way we did — you've pushed us to think harder about what we're actually building.",
+        "A lot of the things we now consider normal engineering practice started as conversations with you.",
+        "We appreciate the trust, the freedom to experiment, the technical debates, and even those moments when our 'simple solution' turned out to need a little more thought.",
+        "Thanks for pushing us to become better engineers without making us feel like we're sitting in a classroom.",
+        "Happy Birthday, Kevin! Here's to another year of building things, learning things, and hopefully creating fewer production incidents. 🚀"
       ],
       "author": "Chandan",
       "role": "Team Zenmonk"
@@ -103,27 +134,27 @@
         "name": "Satvik",
         "role": "Engineering Team",
         "avatarBg": "from-emerald-500 to-teal-700",
-        "message": "Happy Birthday Kevin! Thank you for raising the bar on system design and teaching us to think deeply before writing a single line of code. Hope you have a fantastic celebration!",
-        "tags": ["Architecture", "Guidance"]
+        "message": "Happy Birthday Kevin! Thanks for constantly raising the engineering bar and teaching us that 'it works on my machine' is not a valid architectural pattern. Hope you take a break from refactoring today!",
+        "tags": ["ArchitectureDebates", "NoQuickFixes"]
       },
       {
         "id": "harish",
         "name": "Harish",
         "role": "Engineering Team",
         "avatarBg": "from-orange-500 to-amber-700",
-        "message": "Wishing you the happiest birthday, Kevin! Your architectural insights and commitment to quality inspire all of us to be better engineers every day.",
-        "tags": ["Domain Modeling", "Mentorship"]
+        "message": "Wishing you an awesome birthday, Kevin! May your coffee be strong, your tests all green, and your bounded contexts completely decoupled. Cheers!",
+        "tags": ["BoundedContexts", "GreenBuilds"]
       },
       {
         "id": "team-zenmonk",
         "name": "Team Zenmonk",
         "role": "Engineering & Product",
         "avatarBg": "from-indigo-500 to-purple-700",
-        "message": "From brainstorming domain events to refactoring core modules, thank you for guiding us with patience, clarity, and visionary leadership!",
-        "tags": ["Leadership", "Culture"]
+        "message": "From debating domain event naming to fixing unexpected production quirks, we love working with you. Have the happiest birthday!",
+        "tags": ["Culture", "TeamCamaraderie"]
       }
     ],
-    "buttonText": "Inspect System Telemetry"
+    "buttonText": "Inspect CTO Telemetry"
   },
   "ctoStatus": {
     "heading": "CTO SYSTEM STATUS",
@@ -132,11 +163,17 @@
     "panelTitle": "System Health Monitor",
     "healthStatus": "HEALTHY",
     "uptime": "100% Core Availability",
-    "systemStatusNote": "No critical issues detected. Although the team continues to generate unexpected requirements. 😉",
+    "systemStatusNote": "No critical issues detected. Although the team continues to introduce them. 😉",
+    "statBadges": [
+      {"label": "AGE", "value": "+1"},
+      {"label": "EXPERIENCE", "value": "+1"},
+      {"label": "ARCHITECTURAL OPINIONS", "value": "+∞"}
+    ],
     "easterEgg": {
       "event": "BirthdayCelebrated",
       "aggregate": "Kevin",
       "command": "CelebrateBirthday",
+      "domain": "Team Zenmonk",
       "status": "SUCCESS",
       "checks": [
         "Domain model loaded",
@@ -145,11 +182,17 @@
         "Celebration event dispatched"
       ]
     },
+    "eventStorming": {
+      "title": "EVENT STORMING SESSION",
+      "steps": ["Cake Delivered", "Candles Lit", "Birthday Wishes Dispatched", "Celebration Launched"],
+      "consistency": "Aggregate consistency: ✓"
+    },
     "metrics": [
       {"label": "ARCHITECTURE", "value": 100, "highlight": true},
+      {"label": "SYSTEM DESIGN", "value": 100, "highlight": true},
+      {"label": "DDD KNOWLEDGE", "value": 100, "highlight": true},
       {"label": "PROBLEM SOLVING", "value": 100, "highlight": true},
       {"label": "TEAM TRUST", "value": 98, "highlight": false},
-      {"label": "LEADERSHIP", "value": 100, "highlight": true},
       {"label": "PATIENCE", "value": 91, "highlight": false},
       {"label": "COFFEE", "value": 100, "highlight": true}
     ],
@@ -157,14 +200,14 @@
   },
   "finalMessage": {
     "badge": "Chapter 05 — Heart of the Team",
-    "heading": "But seriously...",
+    "heading": "BUT SERIOUSLY...",
     "paragraphs": [
-      "A CTO doesn't just build systems.",
-      "A great leader creates an environment where people learn to build better systems themselves.",
-      "You've taught us to question assumptions. To understand the domain. To think in boundaries. To design before we implement. And to care about the systems we're building — not just the code we're writing."
+      "We're lucky to work with someone who makes us question our decisions, think a little deeper, and occasionally rethink an entire design five minutes before we thought we were done. 😄",
+      "You've helped us grow as engineers, but more importantly, you've made the journey interesting.",
+      "So here's to another year of building things, breaking things, arguing about architecture, fixing production, and figuring it out together."
     ],
-    "closingLesson": "Those lessons will travel much further than any project we've built together.",
-    "birthdayWish": "Happy Birthday, Kevin! 🎂",
+    "closingLesson": "“We're celebrating our CTO, teammate, and the guy who somehow got us all obsessed with architecture.”",
+    "birthdayWish": "HAPPY BIRTHDAY, KEVIN! 🎂",
     "signoff": "From all of us at Team Zenmonk ❤️",
     "buttonText": "Launch Celebration 🎉"
   },

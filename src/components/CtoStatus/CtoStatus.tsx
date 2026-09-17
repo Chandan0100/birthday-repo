@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import content from '../../content';
-import { Activity, ArrowRight, CheckCircle2, Coffee, ShieldCheck, Terminal } from 'lucide-react';
+import { Activity, ArrowRight, CheckCircle2, Coffee, Terminal, Zap } from 'lucide-react';
 
 interface CtoStatusProps {
   onNext: () => void;
@@ -9,7 +9,7 @@ interface CtoStatusProps {
 
 export const CtoStatus: React.FC<CtoStatusProps> = ({ onNext }) => {
   const { ctoStatus } = content;
-  const { easterEgg, metrics } = ctoStatus;
+  const { easterEgg, eventStorming, metrics, statBadges } = ctoStatus;
 
   return (
     <div className="relative min-h-[90vh] flex flex-col items-center justify-center px-4 py-8 max-w-4xl mx-auto">
@@ -40,12 +40,22 @@ export const CtoStatus: React.FC<CtoStatusProps> = ({ onNext }) => {
           </div>
         </div>
 
+        {/* 3 Quick Stat Badges */}
+        <div className="grid grid-cols-3 gap-2.5 mb-6">
+          {statBadges.map((stat, idx) => (
+            <div key={idx} className="p-3 rounded-xl bg-neutral-900 border border-neutral-800 text-center font-mono">
+              <span className="text-[10px] text-neutral-400 block truncate">{stat.label}</span>
+              <span className="text-base sm:text-lg font-bold text-amber-400">{stat.value}</span>
+            </div>
+          ))}
+        </div>
+
         {/* Telemetry Progress Bars Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 mb-6">
           {metrics.map((metric, idx) => (
             <div
               key={idx}
-              className="p-4 rounded-xl bg-neutral-900/80 border border-neutral-800 space-y-2"
+              className="p-3.5 rounded-xl bg-neutral-900/80 border border-neutral-800 space-y-1.5"
             >
               <div className="flex items-center justify-between text-xs font-mono">
                 <span className="text-neutral-300 font-medium flex items-center space-x-1.5">
@@ -58,11 +68,11 @@ export const CtoStatus: React.FC<CtoStatusProps> = ({ onNext }) => {
               </div>
 
               {/* Progress bar */}
-              <div className="w-full h-2.5 bg-neutral-800 rounded-full overflow-hidden">
+              <div className="w-full h-2 bg-neutral-800 rounded-full overflow-hidden">
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: `${metric.value}%` }}
-                  transition={{ duration: 0.8, delay: idx * 0.1, ease: 'easeOut' }}
+                  transition={{ duration: 0.8, delay: idx * 0.08, ease: 'easeOut' }}
                   className={`h-full rounded-full ${
                     metric.highlight
                       ? 'bg-gradient-to-r from-emerald-500 to-[#00FF66]'
@@ -74,16 +84,34 @@ export const CtoStatus: React.FC<CtoStatusProps> = ({ onNext }) => {
           ))}
         </div>
 
-        {/* System Note & DDD Easter Egg */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-8">
-          {/* Status Note */}
-          <div className="p-4 rounded-xl bg-neutral-900/50 border border-neutral-800 flex items-start space-x-3">
-            <ShieldCheck className="w-5 h-5 text-[#00FF66] shrink-0 mt-0.5" />
-            <div>
-              <h4 className="text-xs font-mono uppercase text-neutral-400">Diagnostic Summary</h4>
-              <p className="text-sm text-neutral-200 mt-1">
-                {ctoStatus.systemStatusNote}
-              </p>
+        {/* Event Storming Diagram + DDD Easter Egg */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
+          {/* Event Storming Diagram Joke */}
+          <div className="p-4 rounded-xl bg-neutral-900/50 border border-neutral-800 font-mono text-xs">
+            <div className="flex items-center justify-between text-[#00FF66] border-b border-neutral-800 pb-2 mb-3">
+              <span className="flex items-center space-x-1.5">
+                <Zap className="w-3.5 h-3.5" />
+                <span>{eventStorming.title}</span>
+              </span>
+              <span className="text-neutral-400 text-[10px]">DDD_STORM</span>
+            </div>
+
+            <div className="flex items-center justify-between gap-1 overflow-x-auto py-2">
+              {eventStorming.steps.map((step, idx) => (
+                <React.Fragment key={idx}>
+                  <div className="px-2 py-1.5 rounded bg-amber-500/10 border border-amber-500/30 text-amber-300 text-[10px] text-center font-medium whitespace-nowrap">
+                    {step}
+                  </div>
+                  {idx < eventStorming.steps.length - 1 && (
+                    <span className="text-neutral-600 text-xs">→</span>
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
+
+            <div className="mt-3 pt-2 border-t border-neutral-800 flex items-center justify-between text-[11px] text-neutral-400">
+              <span>{ctoStatus.systemStatusNote}</span>
+              <span className="text-emerald-400 font-semibold">{eventStorming.consistency}</span>
             </div>
           </div>
 
@@ -116,7 +144,7 @@ export const CtoStatus: React.FC<CtoStatusProps> = ({ onNext }) => {
         {/* Next Button */}
         <div className="flex items-center justify-between flex-wrap gap-4 pt-4 border-t border-neutral-800">
           <span className="text-xs font-mono text-neutral-400">
-            System status: Optimal & ready for celebration
+            System status: 100% nominal & ready for final birthday note
           </span>
 
           <button
@@ -133,4 +161,3 @@ export const CtoStatus: React.FC<CtoStatusProps> = ({ onNext }) => {
 };
 
 export default CtoStatus;
-

@@ -6,11 +6,12 @@ import {
   Compass,
   Boxes,
   Cpu,
-  Sparkles,
+  Shield,
   ArrowRight,
   Terminal,
   CheckCircle2,
-  Code2
+  Code2,
+  Heart
 } from 'lucide-react';
 
 interface EngineeringLegacyProps {
@@ -21,12 +22,13 @@ const iconMap: Record<string, React.ReactNode> = {
   Layers: <Layers className="w-5 h-5" />,
   Compass: <Compass className="w-5 h-5" />,
   Boxes: <Boxes className="w-5 h-5" />,
+  Shield: <Shield className="w-5 h-5" />,
   Cpu: <Cpu className="w-5 h-5" />,
-  Sparkles: <Sparkles className="w-5 h-5" />,
 };
 
 export const EngineeringLegacy: React.FC<EngineeringLegacyProps> = ({ onNext }) => {
   const { legacy } = content;
+  const { seriousMoment } = legacy;
   const [activeTab, setActiveTab] = useState<number>(0);
   const [showLegacyMoment, setShowLegacyMoment] = useState<boolean>(false);
 
@@ -42,31 +44,31 @@ export const EngineeringLegacy: React.FC<EngineeringLegacyProps> = ({ onNext }) 
             transition={{ duration: 0.6 }}
             className="w-full bg-[#0D0D10] border border-[#27272A] rounded-3xl p-6 sm:p-10 md:p-12 shadow-2xl text-neutral-100 relative overflow-hidden"
           >
-            {/* Subtle Neon Glow effect in dark engineering space */}
+            {/* Subtle Neon Glow in dark space */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-[#00FF66]/5 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#F97316]/5 rounded-full blur-3xl pointer-events-none" />
 
             {/* Header section */}
-            <div className="relative z-10 mb-8 pb-6 border-b border-neutral-800">
-              <div className="flex items-center justify-between flex-wrap gap-3 mb-4">
+            <div className="relative z-10 mb-6 pb-6 border-b border-neutral-800">
+              <div className="flex items-center justify-between flex-wrap gap-3 mb-3">
                 <span className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 text-xs font-mono text-[#00FF66]">
                   <Terminal className="w-3.5 h-3.5" />
                   <span>{legacy.badge}</span>
                 </span>
                 <span className="font-mono text-xs text-neutral-400">
-                  SYSTEM://ARCHITECTURAL_THINKING
+                  DEBATES://UNBIASED_ARCH
                 </span>
               </div>
 
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white tracking-tight leading-tight mb-2">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-white tracking-tight leading-tight mb-2">
                 {legacy.heading}
               </h2>
-              <p className="text-lg sm:text-xl text-[#00FF66] font-mono">
+              <p className="text-sm sm:text-base text-[#00FF66] font-mono">
                 {legacy.subheading}
               </p>
 
-              {/* Lead central theme quote */}
-              <div className="mt-6 p-4 rounded-xl bg-neutral-900/90 border-l-4 border-[#00FF66] text-neutral-300 font-sans text-sm sm:text-base italic">
+              {/* Lead quote */}
+              <div className="mt-4 p-3.5 rounded-xl bg-neutral-900/90 border-l-4 border-[#00FF66] text-neutral-300 font-sans text-xs sm:text-sm italic">
                 {legacy.leadQuote}
               </div>
             </div>
@@ -102,30 +104,53 @@ export const EngineeringLegacy: React.FC<EngineeringLegacyProps> = ({ onNext }) 
               initial={{ opacity: 0, x: 10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.3 }}
-              className="relative z-10 p-6 sm:p-8 rounded-2xl bg-neutral-900 border border-neutral-800 mb-8"
+              className="relative z-10 p-6 sm:p-7 rounded-2xl bg-neutral-900 border border-neutral-800 mb-6"
             >
-              <div className="flex items-center space-x-3 text-xs font-mono text-[#00FF66] mb-3">
+              <div className="flex items-center space-x-2.5 text-xs font-mono text-[#00FF66] mb-2">
                 <CheckCircle2 className="w-4 h-4" />
                 <span>{legacy.pillars[activeTab].tag}</span>
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-2">
                 {legacy.pillars[activeTab].title}
               </h3>
 
-              <p className="text-base sm:text-lg font-serif italic text-amber-200/90 mb-4 bg-amber-500/10 p-4 rounded-xl border border-amber-500/20">
+              <p className="text-sm sm:text-base font-serif italic text-amber-200/90 mb-2 bg-amber-500/10 p-3.5 rounded-xl border border-amber-500/20">
                 {legacy.pillars[activeTab].quote}
               </p>
 
-              <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
+              {legacy.pillars[activeTab].caption && (
+                <p className="text-xs font-mono text-neutral-400 mb-3 pl-1">
+                  💡 {legacy.pillars[activeTab].caption}
+                </p>
+              )}
+
+              <p className="text-neutral-300 text-xs sm:text-sm leading-relaxed">
                 {legacy.pillars[activeTab].description}
               </p>
             </motion.div>
 
+            {/* Serious Moment Box */}
+            <div className="relative z-10 p-5 rounded-2xl bg-[#141418] border border-neutral-800/80 mb-6 text-xs sm:text-sm text-neutral-300 space-y-2">
+              <div className="flex items-center space-x-2 text-amber-400 font-bold text-xs uppercase font-mono">
+                <Heart className="w-3.5 h-3.5 text-[#F97316]" />
+                <span>{seriousMoment.heading}</span>
+              </div>
+              <p className="text-neutral-300 leading-relaxed">
+                {seriousMoment.text1} <span className="text-[#00FF66] font-semibold">{seriousMoment.punchline}</span>
+              </p>
+              <p className="text-neutral-400 leading-relaxed">
+                {seriousMoment.text2}
+              </p>
+              <p className="text-xs font-mono text-amber-300/90 pt-1">
+                — {seriousMoment.closing}
+              </p>
+            </div>
+
             {/* Navigation to The Legacy Moment */}
             <div className="relative z-10 flex items-center justify-between flex-wrap gap-4 pt-4 border-t border-neutral-800">
               <span className="text-xs font-mono text-neutral-400">
-                Step 0{activeTab + 1} / 05 Principles
+                Card 0{activeTab + 1} / 05 Architectural Insights
               </span>
 
               <button
@@ -138,7 +163,7 @@ export const EngineeringLegacy: React.FC<EngineeringLegacyProps> = ({ onNext }) 
             </div>
           </motion.div>
         ) : (
-          /* THE LEGACY MOMENT — High Impact Minimal Dark Screen */
+          /* THE LEGACY MOMENT */
           <motion.div
             key="legacy-moment"
             initial={{ opacity: 0, scale: 0.95 }}
@@ -148,7 +173,6 @@ export const EngineeringLegacy: React.FC<EngineeringLegacyProps> = ({ onNext }) 
             className="w-full bg-[#050505] border border-neutral-800 rounded-3xl p-8 sm:p-14 md:p-20 shadow-2xl text-center relative overflow-hidden flex flex-col items-center justify-center min-h-[70vh]"
           >
             <div className="max-w-2xl mx-auto space-y-8">
-              {/* Step 1 */}
               <motion.p
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -158,7 +182,6 @@ export const EngineeringLegacy: React.FC<EngineeringLegacyProps> = ({ onNext }) 
                 {legacy.transitionLead}
               </motion.p>
 
-              {/* Step 2 */}
               <motion.p
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -168,7 +191,7 @@ export const EngineeringLegacy: React.FC<EngineeringLegacyProps> = ({ onNext }) 
                 {legacy.transitionPause1}
               </motion.p>
 
-              {/* Step 3 — THE PUNCHLINE */}
+              {/* The Punchline */}
               <motion.h1
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -180,7 +203,6 @@ export const EngineeringLegacy: React.FC<EngineeringLegacyProps> = ({ onNext }) 
                 </span>
               </motion.h1>
 
-              {/* Step 4 */}
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -190,7 +212,6 @@ export const EngineeringLegacy: React.FC<EngineeringLegacyProps> = ({ onNext }) 
                 {legacy.transitionNote}
               </motion.p>
 
-              {/* Proceed CTA */}
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -214,4 +235,3 @@ export const EngineeringLegacy: React.FC<EngineeringLegacyProps> = ({ onNext }) 
 };
 
 export default EngineeringLegacy;
-

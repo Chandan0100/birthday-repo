@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import content from '../../content';
 import { SparkleDoodle, StarDoodle } from '../Doodles/DoodleIcons';
-import { ArrowRight, BookOpen, Quote } from 'lucide-react';
+import { ArrowRight, BookOpen, Quote, Sparkles } from 'lucide-react';
 
 interface StoryProps {
   onNext: () => void;
@@ -10,17 +10,18 @@ interface StoryProps {
 
 export const Story: React.FC<StoryProps> = ({ onNext }) => {
   const { story } = content;
+  const { ageGapJoke } = story;
 
   return (
-    <div className="relative min-h-[85vh] flex flex-col items-center justify-center px-4 py-12 text-center">
+    <div className="relative min-h-[85vh] flex flex-col items-center justify-center px-4 py-8 text-center">
       <motion.div
         initial={{ opacity: 0, y: 25 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        className="relative z-10 max-w-2xl w-full bg-white/85 backdrop-blur-md border border-[#FED7AA]/70 rounded-3xl p-8 sm:p-12 md:p-14 shadow-xl shadow-[#F97316]/5 text-left"
+        className="relative z-10 max-w-2xl w-full bg-white/85 backdrop-blur-md border border-[#FED7AA]/70 rounded-3xl p-6 sm:p-10 md:p-12 shadow-xl shadow-[#F97316]/5 text-left"
       >
         {/* Top Badge */}
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex items-center justify-between mb-6">
           <span className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#FFF4E8] border border-[#FED7AA] text-xs font-mono text-[#EA580C]">
             <BookOpen className="w-3.5 h-3.5" />
             <span>{story.badge}</span>
@@ -29,26 +30,53 @@ export const Story: React.FC<StoryProps> = ({ onNext }) => {
         </div>
 
         {/* Title */}
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#1C1917] tracking-tight leading-tight mb-4">
+        <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#1C1917] tracking-tight leading-tight mb-2">
           {story.title}
         </h2>
 
         {/* Subtitle */}
-        <p className="text-base sm:text-lg font-medium text-[#EA580C] mb-8">
+        <p className="text-base sm:text-lg font-medium text-[#EA580C] mb-6">
           {story.subtitle}
         </p>
 
         {/* Paragraphs */}
-        <div className="space-y-4 text-base sm:text-lg text-[#57534E] leading-relaxed mb-8">
+        <div className="space-y-3 text-sm sm:text-base text-[#57534E] leading-relaxed mb-6">
           {story.paragraphs.map((p, idx) => (
             <p key={idx}>{p}</p>
           ))}
         </div>
 
-        {/* Highlighted Quote Callout */}
-        <div className="relative my-8 p-6 rounded-2xl bg-[#FFF9F2] border border-[#FED7AA] shadow-sm">
-          <Quote className="w-8 h-8 text-[#FB923C]/40 absolute -top-3 -left-2 rotate-180" />
-          <p className="font-serif italic text-xl sm:text-2xl text-[#1C1917] font-semibold text-center leading-snug">
+        {/* The Age Gap Telemetry Card */}
+        <div className="my-6 p-5 rounded-2xl bg-[#0F0F11] border border-neutral-800 text-neutral-100 shadow-md font-mono text-xs">
+          <div className="flex items-center justify-between pb-2 mb-3 border-b border-neutral-800 text-neutral-400">
+            <span className="flex items-center space-x-1.5 text-[#00FF66]">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>{ageGapJoke.title}</span>
+            </span>
+            <span className="text-neutral-500">SYS_DIFF://v2026</span>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
+            <div className="p-2.5 rounded-lg bg-neutral-900 border border-neutral-800">
+              <span className="text-neutral-500 block text-[10px] uppercase">{ageGapJoke.ageLabel}</span>
+              <span className="text-amber-400 font-bold text-sm">{ageGapJoke.ageValue}</span>
+            </div>
+
+            <div className="p-2.5 rounded-lg bg-neutral-900 border border-neutral-800">
+              <span className="text-neutral-500 block text-[10px] uppercase">{ageGapJoke.archLabel}</span>
+              <span className="text-[#00FF66] font-bold text-sm tracking-widest">{ageGapJoke.archValue}</span>
+            </div>
+          </div>
+
+          <p className="text-neutral-300 text-xs italic bg-neutral-900/60 p-2.5 rounded-lg border-l-2 border-[#00FF66]">
+            {ageGapJoke.punchline}
+          </p>
+        </div>
+
+        {/* Core Quote Callout */}
+        <div className="relative my-6 p-5 rounded-2xl bg-[#FFF9F2] border border-[#FED7AA] shadow-sm">
+          <Quote className="w-7 h-7 text-[#FB923C]/30 absolute -top-3 -left-2 rotate-180" />
+          <p className="font-serif italic text-lg sm:text-xl text-[#1C1917] font-semibold text-center leading-snug">
             {story.quote}
           </p>
         </div>
@@ -57,12 +85,12 @@ export const Story: React.FC<StoryProps> = ({ onNext }) => {
         <div className="pt-4 flex items-center justify-between flex-wrap gap-4 border-t border-[#FED7AA]/40">
           <div className="inline-flex items-center space-x-1.5 font-handwriting text-xl text-[#EA580C]">
             <SparkleDoodle className="w-4 h-4" />
-            <span>The engineering journey</span>
+            <span>The engineering banter</span>
           </div>
 
           <button
             onClick={onNext}
-            className="inline-flex items-center space-x-2 px-6 py-3.5 bg-[#F97316] hover:bg-[#EA580C] text-white rounded-xl font-medium text-sm transition-all shadow-md shadow-[#F97316]/20 hover:shadow-lg hover:shadow-[#F97316]/30 group"
+            className="inline-flex items-center space-x-2 px-6 py-3 bg-[#F97316] hover:bg-[#EA580C] text-white rounded-xl font-medium text-sm transition-all shadow-md shadow-[#F97316]/20 hover:shadow-lg group"
           >
             <span>{story.buttonText}</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -74,4 +102,3 @@ export const Story: React.FC<StoryProps> = ({ onNext }) => {
 };
 
 export default Story;
-

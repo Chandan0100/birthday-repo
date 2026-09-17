@@ -9,7 +9,7 @@ import {
   CakeDoodle,
   BalloonDoodle
 } from '../Doodles/DoodleIcons';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
 interface BirthdayHeroProps {
   onNext: () => void;
@@ -34,7 +34,7 @@ export const BirthdayHero: React.FC<BirthdayHeroProps> = ({ onNext }) => {
   }, []);
 
   return (
-    <div className="relative min-h-[90vh] flex flex-col items-center justify-center px-4 py-12 text-center overflow-hidden">
+    <div className="relative min-h-[90vh] flex flex-col items-center justify-center px-4 py-8 text-center overflow-hidden">
       {/* Decorative floating balloons in background */}
       <motion.div
         initial={{ y: 80, opacity: 0 }}
@@ -43,7 +43,7 @@ export const BirthdayHero: React.FC<BirthdayHeroProps> = ({ onNext }) => {
           y: { duration: 5, repeat: Infinity, ease: 'easeInOut' },
           opacity: { duration: 1 }
         }}
-        className="absolute top-12 left-6 md:left-24 pointer-events-none"
+        className="absolute top-8 left-6 md:left-20 pointer-events-none"
       >
         <BalloonDoodle color="#F97316" stringColor="#EA580C" className="w-12 h-20 md:w-16 md:h-28" />
       </motion.div>
@@ -55,7 +55,7 @@ export const BirthdayHero: React.FC<BirthdayHeroProps> = ({ onNext }) => {
           y: { duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 1 },
           opacity: { duration: 1.2, delay: 0.2 }
         }}
-        className="absolute top-16 right-6 md:right-28 pointer-events-none"
+        className="absolute top-12 right-6 md:right-24 pointer-events-none"
       >
         <BalloonDoodle color="#FFD166" stringColor="#D97706" className="w-10 h-16 md:w-14 md:h-24" />
       </motion.div>
@@ -68,7 +68,7 @@ export const BirthdayHero: React.FC<BirthdayHeroProps> = ({ onNext }) => {
           scale: { duration: 0.6, delay: 0.3 },
           rotate: { duration: 7, repeat: Infinity, ease: 'easeInOut' }
         }}
-        className="absolute top-28 left-1/4 hidden md:block pointer-events-none"
+        className="absolute top-24 left-1/4 hidden md:block pointer-events-none"
       >
         <StarDoodle className="w-6 h-6" color="#FFD166" />
       </motion.div>
@@ -77,7 +77,7 @@ export const BirthdayHero: React.FC<BirthdayHeroProps> = ({ onNext }) => {
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.4 }}
-        className="absolute bottom-28 right-1/4 hidden md:block pointer-events-none"
+        className="absolute bottom-20 right-1/4 hidden md:block pointer-events-none"
       >
         <SparkleDoodle className="w-7 h-7" color="#F97316" />
       </motion.div>
@@ -86,7 +86,7 @@ export const BirthdayHero: React.FC<BirthdayHeroProps> = ({ onNext }) => {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.5, delay: 0.5 }}
-        className="absolute bottom-32 left-1/5 hidden lg:block pointer-events-none"
+        className="absolute bottom-24 left-1/5 hidden lg:block pointer-events-none"
       >
         <HeartDoodle className="w-6 h-6" color="#F7A8B8" />
       </motion.div>
@@ -96,14 +96,14 @@ export const BirthdayHero: React.FC<BirthdayHeroProps> = ({ onNext }) => {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="relative z-10 max-w-2xl w-full bg-white/80 backdrop-blur-md border border-[#FED7AA]/70 rounded-3xl p-8 sm:p-12 md:p-14 shadow-xl shadow-[#F97316]/5"
+        className="relative z-10 max-w-2xl w-full bg-white/85 backdrop-blur-md border border-[#FED7AA]/70 rounded-3xl p-6 sm:p-10 md:p-12 shadow-xl shadow-[#F97316]/5"
       >
-        {/* Top Badge & Sparkle */}
+        {/* Top Badge */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#FFF4E8] border border-[#FED7AA] text-xs font-medium text-[#EA580C] mb-6"
+          className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#FFF4E8] border border-[#FED7AA] text-xs font-medium text-[#EA580C] mb-4"
         >
           <SparkleDoodle className="w-3.5 h-3.5" color="#EA580C" />
           <span>{hero.badge}</span>
@@ -114,51 +114,82 @@ export const BirthdayHero: React.FC<BirthdayHeroProps> = ({ onNext }) => {
           initial={{ scale: 0, y: 10 }}
           animate={{ scale: 1, y: 0 }}
           transition={{ type: 'spring', stiffness: 200, damping: 15, delay: 0.3 }}
-          className="flex justify-center mb-4"
+          className="flex justify-center mb-3"
         >
           <CakeDoodle className="w-14 h-14 md:w-16 md:h-16" />
         </motion.div>
 
-        {/* Greeting Prefix */}
-        <motion.p
+        {/* Focal Headline */}
+        <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-xs sm:text-sm font-mono tracking-[0.25em] text-[#A8A29E] uppercase mb-2"
+          className="mb-4"
         >
-          {hero.greetingPrefix}
-        </motion.p>
-
-        {/* Focal Headline (Name) */}
-        <motion.h1
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="text-5xl sm:text-7xl md:text-8xl font-serif font-black tracking-tight text-[#1C1917] mb-6 drop-shadow-sm"
-        >
-          <span className="bg-gradient-to-r from-[#1C1917] via-[#EA580C] to-[#1C1917] bg-clip-text text-transparent">
-            {hero.name}
-          </span>
-        </motion.h1>
+          <p className="text-xs sm:text-sm font-mono tracking-[0.2em] text-[#A8A29E] uppercase mb-1">
+            {hero.greetingPrefix}
+          </p>
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif font-black tracking-tight text-[#1C1917] leading-tight">
+            <span className="bg-gradient-to-r from-[#1C1917] via-[#EA580C] to-[#1C1917] bg-clip-text text-transparent">
+              {hero.greetingHighlight}
+            </span>
+          </h1>
+        </motion.div>
 
         {/* Subtext */}
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.7 }}
-          className="text-lg sm:text-xl text-[#57534E] font-normal max-w-md mx-auto mb-8 leading-relaxed"
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="text-base sm:text-lg font-medium text-[#EA580C] max-w-lg mx-auto mb-2"
         >
           {hero.subtext}
         </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.7 }}
+          className="text-xs sm:text-sm text-[#57534E] italic max-w-md mx-auto mb-6"
+        >
+          “{hero.playfulSubtext}”
+        </motion.p>
+
+        {/* Birthday Requirements Checklist Box */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="p-4 sm:p-5 rounded-2xl bg-[#FFF9F2] border border-[#FED7AA] text-left mb-6 font-mono text-xs sm:text-sm shadow-sm"
+        >
+          <div className="text-[11px] font-bold text-[#EA580C] uppercase tracking-wider mb-2.5 pb-1.5 border-b border-[#FED7AA]/60 flex items-center justify-between">
+            <span>{hero.requirementsTitle}</span>
+            <span className="text-neutral-400">spec://bday.v1</span>
+          </div>
+
+          <div className="space-y-1.5 mb-3 text-[#292524]">
+            {hero.requirements.map((req, idx) => (
+              <div key={idx} className="flex items-center space-x-2">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#00D957] shrink-0" />
+                <span>{req}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="pt-2 border-t border-[#FED7AA]/60 flex items-center justify-between text-[11px]">
+            <span className="font-semibold text-[#1C1917]">{hero.requirementOne}</span>
+            <span className="text-[#EA580C] font-semibold">{hero.requirementStatus}</span>
+          </div>
+        </motion.div>
 
         {/* Handwritten Annotation */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.9 }}
-          className="mb-8"
+          className="mb-6"
         >
-          <span className="font-handwriting text-2xl md:text-3xl text-[#EA580C] tracking-wide inline-block -rotate-2">
+          <span className="font-handwriting text-xl md:text-2xl text-[#EA580C] tracking-wide inline-block -rotate-1">
             ✦ {hero.cardNote} ✦
           </span>
         </motion.div>
@@ -172,10 +203,10 @@ export const BirthdayHero: React.FC<BirthdayHeroProps> = ({ onNext }) => {
         >
           <button
             onClick={onNext}
-            className="group inline-flex items-center space-x-3 px-8 py-4 bg-[#F97316] hover:bg-[#EA580C] text-white font-medium text-base rounded-2xl shadow-lg shadow-[#F97316]/25 hover:shadow-xl hover:shadow-[#F97316]/35 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0"
+            className="group inline-flex items-center space-x-3 px-8 py-3.5 bg-[#F97316] hover:bg-[#EA580C] text-white font-medium text-sm sm:text-base rounded-2xl shadow-lg shadow-[#F97316]/25 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0"
           >
             <span>{hero.buttonText}</span>
-            <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
         </motion.div>
       </motion.div>
@@ -184,4 +215,3 @@ export const BirthdayHero: React.FC<BirthdayHeroProps> = ({ onNext }) => {
 };
 
 export default BirthdayHero;
-

@@ -13,6 +13,11 @@ export interface BirthdayHeroContent {
   greetingHighlight: string;
   name: string;
   subtext: string;
+  playfulSubtext: string;
+  requirementsTitle: string;
+  requirements: string[];
+  requirementOne: string;
+  requirementStatus: string;
   buttonText: string;
   cardNote: string;
 }
@@ -23,6 +28,14 @@ export interface StoryContent {
   subtitle: string;
   paragraphs: string[];
   quote: string;
+  ageGapJoke: {
+    title: string;
+    ageLabel: string;
+    ageValue: string;
+    archLabel: string;
+    archValue: string;
+    punchline: string;
+  };
   buttonText: string;
 }
 
@@ -31,6 +44,7 @@ export interface LegacyPillar {
   title: string;
   tag: string;
   quote: string;
+  caption?: string;
   description: string;
   iconName: string;
 }
@@ -41,6 +55,13 @@ export interface LegacyContent {
   badge: string;
   leadQuote: string;
   pillars: LegacyPillar[];
+  seriousMoment: {
+    heading: string;
+    text1: string;
+    punchline: string;
+    text2: string;
+    closing: string;
+  };
   transitionLead: string;
   transitionPause1: string;
   transitionPunchline: string;
@@ -85,12 +106,19 @@ export interface CtoStatusContent {
   healthStatus: string;
   uptime: string;
   systemStatusNote: string;
+  statBadges: Array<{ label: string; value: string }>;
   easterEgg: {
     event: string;
     aggregate: string;
     command: string;
+    domain: string;
     status: string;
     checks: string[];
+  };
+  eventStorming: {
+    title: string;
+    steps: string[];
+    consistency: string;
   };
   metrics: StatusMetric[];
   buttonText: string;
