@@ -1,46 +1,123 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2, RotateCcw, Heart, PartyPopper, Cake, Flame } from 'lucide-react';
+import {
+  CheckCircle2,
+  RotateCcw,
+  Heart,
+  PartyPopper,
+  Cake,
+  Flame,
+  Sparkles,
+  FlameKindling,
+  Disc,
+} from 'lucide-react';
 import { ZenmonkLogo } from './ZenmonkLogo';
+import { FloatingBalloons } from './FloatingBalloons';
 import { BIRTHDAY_CONFIG } from '../config/birthdayData';
-import { triggerGrandCelebration, triggerContinuousConfetti } from '../utils/confetti';
+import {
+  triggerNormal,
+  triggerFancy,
+  triggerFireworks,
+  triggerStreamers,
+} from '../utils/celebrations';
 
 interface CelebrationProps {
   onRestart: () => void;
 }
 
+type CelebrationMode = 'normal' | 'fancy' | 'fireworks' | 'balloons' | 'party';
+
 export const Celebration: React.FC<CelebrationProps> = ({ onRestart }) => {
-  const [hasDeployedWishes, setHasDeployedWishes] = useState(false);
+  const [activeMode, setActiveMode] = useState<CelebrationMode>('normal');
+  const [balloonTriggerKey, setBalloonTriggerKey] = useState<number>(0);
+  const [celebrateCount, setCelebrateCount] = useState<number>(1);
   const candleLit = true;
-  const [cheerCount, setCheerCount] = useState(1);
 
-  const handleDeployWishes = () => {
-    setHasDeployedWishes(true);
-    triggerGrandCelebration();
-    triggerContinuousConfetti(3500);
+  const runCelebrationMode = (mode: CelebrationMode) => {
+    setActiveMode(mode);
+    setCelebrateCount((c) => c + 1);
+
+    switch (mode) {
+      case 'normal':
+        triggerNormal();
+        break;
+      case 'fancy':
+        triggerFancy();
+        break;
+      case 'fireworks':
+        triggerFireworks();
+        break;
+      case 'balloons':
+        setBalloonTriggerKey((k) => k + 1);
+        break;
+      case 'party':
+        triggerFancy();
+        triggerFireworks();
+        triggerStreamers(3000);
+        setBalloonTriggerKey((k) => k + 1);
+        break;
+    }
   };
 
-  const handleMoreConfetti = () => {
-    setCheerCount((c) => c + 1);
-    triggerGrandCelebration();
+  const handleCelebrateAgain = () => {
+    runCelebrationMode(activeMode);
   };
 
-  // Auto trigger first blast if entering this stage
+  // Trigger default "NORMAL" celebration on initial mount
   useEffect(() => {
     const timer = setTimeout(() => {
-      if (!hasDeployedWishes) {
-        handleDeployWishes();
-      }
-    }, 400);
+      triggerNormal();
+    }, 300);
     return () => clearTimeout(timer);
   }, []);
 
+  const celebrationButtons: {
+    id: CelebrationMode;
+    label: string;
+    description: string;
+    icon: React.ReactNode;
+  }[] = [
+    {
+      id: 'normal',
+      label: 'Normal',
+      description: 'Classic confetti',
+      icon: <Disc className="w-3.5 h-3.5" />,
+    },
+    {
+      id: 'fancy',
+      label: 'Fancy',
+      description: 'Stars & sparkles',
+      icon: <Sparkles className="w-3.5 h-3.5" />,
+    },
+    {
+      id: 'fireworks',
+      label: 'Fireworks',
+      description: 'Radial night sky bursts',
+      icon: <FlameKindling className="w-3.5 h-3.5" />,
+    },
+    {
+      id: 'balloons',
+      label: 'Balloons',
+      description: 'Rising festive balloons',
+      icon: <span className="text-xs">🎈</span>,
+    },
+    {
+      id: 'party',
+      label: 'Party',
+      description: 'Maximum energy celebration',
+      icon: <PartyPopper className="w-3.5 h-3.5" />,
+    },
+  ];
+
   return (
     <div className="min-h-[85vh] flex items-center justify-center px-4 py-8 relative z-10">
+      {/* Floating Balloons Layer */}
+      <FloatingBalloons triggerKey={balloonTriggerKey} />
+
       <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
+        initial={{ opacity: 0, scale: 0.94 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className="w-full max-w-2xl text-center"
       >
         <div className="glass-panel-glow rounded-3xl p-8 sm:p-12 relative overflow-hidden border border-zen-500/30 shadow-2xl space-y-8">
@@ -55,9 +132,9 @@ export const Celebration: React.FC<CelebrationProps> = ({ onRestart }) => {
                 rotate: [0, 2, -2, 0],
               }}
               transition={{ repeat: Infinity, duration: 4 }}
-              className="w-24 h-24 sm:w-28 sm:h-28 mx-auto rounded-3xl bg-gradient-to-br from-zen-500/30 via-amber-500/20 to-orange-500/30 border border-zen-500/40 flex flex-col items-center justify-center shadow-xl shadow-zen-500/20 text-zen-400 relative cursor-pointer"
-              onClick={handleMoreConfetti}
-              title="Click for extra confetti!"
+              className="w-24 h-24 sm:w-28 sm:h-28 mx-auto rounded-3xl bg-gradient-to-br from-zen-500/30 via-amber-500/20 to-orange-500/30 border border-zen-500/40 flex flex-col items-center justify-center shadow-xl shadow-zen-500/20 text-zen-400 relative cursor-pointer active:scale-95 transition-transform"
+              onClick={handleCelebrateAgain}
+              title="Click to celebrate again!"
             >
               {candleLit && (
                 <motion.div
@@ -73,7 +150,7 @@ export const Celebration: React.FC<CelebrationProps> = ({ onRestart }) => {
           </div>
 
           {/* Main Celebration Banner */}
-          <div className="space-y-4">
+          <div className="space-y-3">
             <motion.h1
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -88,42 +165,80 @@ export const Celebration: React.FC<CelebrationProps> = ({ onRestart }) => {
             </p>
           </div>
 
+          {/* Primary "Celebrate Again" Button */}
+          <div className="pt-2">
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={handleCelebrateAgain}
+              className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-zen-500 via-orange-500 to-amber-500 hover:from-zen-400 hover:to-orange-400 text-slate-950 font-mono text-sm sm:text-base font-bold tracking-wider uppercase shadow-xl shadow-zen-500/30 flex items-center justify-center space-x-2.5 mx-auto transition-all"
+            >
+              <PartyPopper className="w-5 h-5 text-slate-950" />
+              <span>CELEBRATE AGAIN 🎉</span>
+              <span className="text-xs px-2 py-0.5 rounded-full bg-black/20 text-slate-900 font-mono">
+                #{celebrateCount}
+              </span>
+            </motion.button>
+          </div>
+
+          {/* Celebration Style Selector */}
+          <div className="space-y-3 pt-2">
+            <div className="text-[11px] font-mono text-slate-400 uppercase tracking-widest text-center">
+              CELEBRATION STYLES
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 max-w-xl mx-auto">
+              {celebrationButtons.map((btn) => {
+                const isSelected = activeMode === btn.id;
+
+                return (
+                  <button
+                    key={btn.id}
+                    onClick={() => runCelebrationMode(btn.id)}
+                    className={`py-2.5 px-3 rounded-xl font-mono text-xs font-semibold transition-all flex flex-col items-center justify-center space-y-1 border ${
+                      isSelected
+                        ? 'bg-zen-500/20 text-zen-300 border-zen-500/50 shadow-md shadow-zen-500/10 scale-105'
+                        : 'bg-black/40 hover:bg-white/5 text-slate-400 hover:text-slate-200 border-white/5'
+                    }`}
+                  >
+                    <div className="flex items-center space-x-1">
+                      {btn.icon}
+                      <span>{btn.label}</span>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
           {/* Status & Next Release Box */}
-          <div className="bg-black/40 border border-white/10 rounded-2xl p-5 sm:p-6 space-y-4 font-mono text-left max-w-lg mx-auto">
-            <div className="space-y-2">
+          <div className="bg-black/40 border border-white/10 rounded-2xl p-5 font-mono text-left max-w-lg mx-auto space-y-3">
+            <div className="space-y-1.5">
               <div className="flex justify-between items-center text-xs text-slate-400">
                 <span>Birthday Status</span>
                 <span className="text-emerald-400 font-bold">100% COMPLETE</span>
               </div>
-              <div className="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden p-0.5">
+              <div className="w-full h-2 bg-slate-800 rounded-full overflow-hidden p-0.5">
                 <div className="w-full h-full bg-gradient-to-r from-zen-500 to-emerald-400 rounded-full" />
               </div>
             </div>
 
             <div className="pt-2 border-t border-white/5 flex items-center justify-between text-xs">
-              <span className="text-slate-400">Next Planned Release:</span>
+              <span className="text-slate-400">Next Milestone:</span>
               <span className="text-zen-300 font-bold tracking-wider">
                 {BIRTHDAY_CONFIG.celebration.nextReleaseText}
               </span>
             </div>
           </div>
 
-          {/* Action Buttons */}
-          <div className="pt-2 space-y-3 sm:space-y-0 sm:flex sm:items-center sm:justify-center sm:gap-4">
-            <button
-              onClick={handleMoreConfetti}
-              className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-zen-500 to-orange-500 hover:from-zen-400 hover:to-orange-400 text-slate-950 font-mono text-xs sm:text-sm font-bold tracking-wider uppercase flex items-center justify-center space-x-2 transition-all shadow-lg shadow-zen-500/20 active:scale-95"
-            >
-              <PartyPopper className="w-4 h-4" />
-              <span>TRIGGER MORE CONFETTI ({cheerCount})</span>
-            </button>
-
+          {/* Bottom Controls: Replay entire journey */}
+          <div className="pt-2 flex justify-center">
             <button
               onClick={onRestart}
-              className="w-full sm:w-auto px-5 py-3.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-white/10 text-slate-300 font-mono text-xs sm:text-sm font-semibold flex items-center justify-center space-x-2 transition-all"
+              className="px-5 py-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-white/10 text-slate-400 hover:text-slate-200 font-mono text-xs font-semibold flex items-center space-x-2 transition-all"
             >
               <RotateCcw className="w-3.5 h-3.5" />
-              <span>REPLAY SURPRISE</span>
+              <span>REPLAY SURPRISE FROM START</span>
             </button>
           </div>
 
@@ -133,7 +248,10 @@ export const Celebration: React.FC<CelebrationProps> = ({ onRestart }) => {
             <div className="flex items-center gap-1.5">
               <span>Made with</span>
               <Heart className="w-3.5 h-3.5 text-zen-500 fill-current animate-pulse" />
-              <span>by <strong className="text-white">{BIRTHDAY_CONFIG.teamName}</strong> for <strong className="text-zen-400">{BIRTHDAY_CONFIG.personName}</strong></span>
+              <span>
+                by <strong className="text-white">{BIRTHDAY_CONFIG.teamName}</strong> for{' '}
+                <strong className="text-zen-400">{BIRTHDAY_CONFIG.personName}</strong>
+              </span>
             </div>
           </div>
         </div>
