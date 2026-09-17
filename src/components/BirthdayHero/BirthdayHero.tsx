@@ -184,3 +184,4 @@ export const BirthdayHero: React.FC<BirthdayHeroProps> = ({ onNext }) => {
 };
 
 export default BirthdayHero;
+

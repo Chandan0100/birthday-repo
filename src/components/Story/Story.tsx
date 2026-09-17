@@ -74,3 +74,4 @@ export const Story: React.FC<StoryProps> = ({ onNext }) => {
 };
 
 export default Story;
+

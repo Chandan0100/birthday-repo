@@ -45,3 +45,4 @@ export const ZenmonkLogo: React.FC<ZenmonkLogoProps> = ({
 };
 
 export default ZenmonkLogo;
+

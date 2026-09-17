@@ -100,3 +100,4 @@ export const FinalMessage: React.FC<FinalMessageProps> = ({ onNext }) => {
 };
 
 export default FinalMessage;
+

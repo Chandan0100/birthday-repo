@@ -68,3 +68,4 @@ export const AmbientLighting: React.FC<AmbientLightingProps> = ({ stage }) => {
 };
 
 export default AmbientLighting;
+

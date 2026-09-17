@@ -30,3 +30,4 @@ export const Footer: React.FC<FooterProps> = ({ isDarkTheme = false }) => {
 };
 
 export default Footer;
+

@@ -72,3 +72,4 @@ export const PasswordGate: React.FC<PasswordGateProps> = ({ onSuccess }) => {
 };
 
 export default PasswordGate;
+
