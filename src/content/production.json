@@ -77,7 +77,7 @@
         "title": "Software Architecture",
         "tag": "Decoupling & Boundaries",
         "quote": "“Turns out having folders called domain, application, and infrastructure doesn't automatically mean you have good architecture.”",
-        "caption": "Kevin would probably like us to explain why in our next PR.",
+        "caption": "Kevin would probably like us to explain why in our next PR. 😂",
         "description": "Structuring systems to isolate change, respecting boundaries, and thinking about what happens when requirements inevitably change.",
         "iconName": "Compass"
       },
