@@ -12,7 +12,7 @@
     "greetingPrefix": "HAPPY BIRTHDAY,",
     "greetingHighlight": "KEVIN! 🎂",
     "name": "Kevin",
-    "photoUrl": "/src/assets/kevin-profile.jpg",
+    "photoUrl": "https://lh3.googleusercontent.com/rd-ao/AHP4FtnHWSexC7KKUtDYj1MjIOUs1bOpqPpJOCPXc3jiYZ-nw2uOxax7KmI8xxqE7lowoVoeftu8i64tBMCmouEXlR7jMsMyyM9R41gsTA_3Kd_iFCjJZ69hag3dzpYAOnueSiAcV8jl4nPvVBrYXVBzMQ2_K5P66JJWpNa-5mu8U4yjeSTuKpOY-KXcyciv5dotA_SahjC-NbP6XcZG6iKS4_yalALLv65rwuZedeXE3EIxCfxUJyv59bZctvqq89tzpqVjkzux2Fg96sc_MCS798JXZcsxBlCCWi-JNQ1SCJshi2cQTlpyFZveDq0LSE-dBxusVF8yQnh3tK28RKxkr0SAusCDKW51IHrlpr-Zb8EsiSkUpLK7XgTY0zCVZc6tL6-1EyLfvaeNlTYkMAw8rzuIea7JszrOFlb_K2nno0EqALWIFyA-fsflSdumJFTdU3EAURg1jcVbCxeMuEAgm9jiUMbHeWTY9t_Pbtk6NYDKkbYOlD8J2eUbR_F4RSCn4TytKhYrlJyCUgClD3oIzsZMexBi1TRgE-Ar391DZH9-aVlu88LbHrfz3rdyT10JTF2n1kNVIoK5LvKauDoy8MiXaJ_dUJIOTGQIHwWjCxNQc4DvrWDr1C-BOhKTkEmVRsy6_Ot0sPcieqK8kxRLiz4sNe7mGcnBHjFMG97HfkEqIG5siFGmMfutmlciRc_CzuJlOByOX53QBREXr-LrDRIqkvzPstBb0Va8N0FFyb3izXNF3t8Hn2HNzisrxWFGboeRqMxschD2ahAYYvu0p_IxhF0ZkI49bnqyW6Vo3z-p7p5GRl3LfwBhzSaqe8JMGNMTwElgLhtLN6ULi6VgUfyOlMprfKfFqbtqenbUFZBqb_YvkLfTE26FCOIoDfRE73sPCJhd0-SUMfKQz-Dm4aCKqtbNl3AhClN4GcdxihSNKDXbEwetdfSjArAe88vhkWo9CXFJgG16mumbCOg899YQmVuGqzOY7JKcIu3htCqm5qwKs5wHuQ9vwKkEx2Lwo4fKm-AULYPbo5VVA1BPKoVKveUDjRbBpN77qvZWb_BdAo2LaTXkLFy-uMMqdeSAIMB4Zo197AIWfB32jvBvY5OtDvfI0DtrQQO19qtkod7R=s96-c",
     "subtext": "Yes, this entire website is actually for you.",
     "playfulSubtext": "We considered sending a normal birthday message. Then someone suggested we over-engineer it.",
     "requirementsTitle": "Birthday Requirements Checklist",
@@ -39,7 +39,7 @@
     "photoSection": {
       "title": "The Person Behind The CTO Title",
       "subtitle": "Architectural debates, 'Why?' questions, and good coffee.",
-      "photoUrl": "/src/assets/kevin-profile.jpg",
+      "photoUrl": "https://lh3.googleusercontent.com/rd-ao/AHP4FtnHWSexC7KKUtDYj1MjIOUs1bOpqPpJOCPXc3jiYZ-nw2uOxax7KmI8xxqE7lowoVoeftu8i64tBMCmouEXlR7jMsMyyM9R41gsTA_3Kd_iFCjJZ69hag3dzpYAOnueSiAcV8jl4nPvVBrYXVBzMQ2_K5P66JJWpNa-5mu8U4yjeSTuKpOY-KXcyciv5dotA_SahjC-NbP6XcZG6iKS4_yalALLv65rwuZedeXE3EIxCfxUJyv59bZctvqq89tzpqVjkzux2Fg96sc_MCS798JXZcsxBlCCWi-JNQ1SCJshi2cQTlpyFZveDq0LSE-dBxusVF8yQnh3tK28RKxkr0SAusCDKW51IHrlpr-Zb8EsiSkUpLK7XgTY0zCVZc6tL6-1EyLfvaeNlTYkMAw8rzuIea7JszrOFlb_K2nno0EqALWIFyA-fsflSdumJFTdU3EAURg1jcVbCxeMuEAgm9jiUMbHeWTY9t_Pbtk6NYDKkbYOlD8J2eUbR_F4RSCn4TytKhYrlJyCUgClD3oIzsZMexBi1TRgE-Ar391DZH9-aVlu88LbHrfz3rdyT10JTF2n1kNVIoK5LvKauDoy8MiXaJ_dUJIOTGQIHwWjCxNQc4DvrWDr1C-BOhKTkEmVRsy6_Ot0sPcieqK8kxRLiz4sNe7mGcnBHjFMG97HfkEqIG5siFGmMfutmlciRc_CzuJlOByOX53QBREXr-LrDRIqkvzPstBb0Va8N0FFyb3izXNF3t8Hn2HNzisrxWFGboeRqMxschD2ahAYYvu0p_IxhF0ZkI49bnqyW6Vo3z-p7p5GRl3LfwBhzSaqe8JMGNMTwElgLhtLN6ULi6VgUfyOlMprfKfFqbtqenbUFZBqb_YvkLfTE26FCOIoDfRE73sPCJhd0-SUMfKQz-Dm4aCKqtbNl3AhClN4GcdxihSNKDXbEwetdfSjArAe88vhkWo9CXFJgG16mumbCOg899YQmVuGqzOY7JKcIu3htCqm5qwKs5wHuQ9vwKkEx2Lwo4fKm-AULYPbo5VVA1BPKoVKveUDjRbBpN77qvZWb_BdAo2LaTXkLFy-uMMqdeSAIMB4Zo197AIWfB32jvBvY5OtDvfI0DtrQQO19qtkod7R=s96-c",
       "annotations": [
         "Architecture discussions",
         "“Why?”",
@@ -215,7 +215,7 @@
   "finalMessage": {
     "badge": "Chapter 05 — Heart of the Team",
     "heading": "BUT SERIOUSLY...",
-    "photoUrl": "/src/assets/kevin-profile.jpg",
+    "photoUrl": "https://lh3.googleusercontent.com/rd-ao/AHP4FtnHWSexC7KKUtDYj1MjIOUs1bOpqPpJOCPXc3jiYZ-nw2uOxax7KmI8xxqE7lowoVoeftu8i64tBMCmouEXlR7jMsMyyM9R41gsTA_3Kd_iFCjJZ69hag3dzpYAOnueSiAcV8jl4nPvVBrYXVBzMQ2_K5P66JJWpNa-5mu8U4yjeSTuKpOY-KXcyciv5dotA_SahjC-NbP6XcZG6iKS4_yalALLv65rwuZedeXE3EIxCfxUJyv59bZctvqq89tzpqVjkzux2Fg96sc_MCS798JXZcsxBlCCWi-JNQ1SCJshi2cQTlpyFZveDq0LSE-dBxusVF8yQnh3tK28RKxkr0SAusCDKW51IHrlpr-Zb8EsiSkUpLK7XgTY0zCVZc6tL6-1EyLfvaeNlTYkMAw8rzuIea7JszrOFlb_K2nno0EqALWIFyA-fsflSdumJFTdU3EAURg1jcVbCxeMuEAgm9jiUMbHeWTY9t_Pbtk6NYDKkbYOlD8J2eUbR_F4RSCn4TytKhYrlJyCUgClD3oIzsZMexBi1TRgE-Ar391DZH9-aVlu88LbHrfz3rdyT10JTF2n1kNVIoK5LvKauDoy8MiXaJ_dUJIOTGQIHwWjCxNQc4DvrWDr1C-BOhKTkEmVRsy6_Ot0sPcieqK8kxRLiz4sNe7mGcnBHjFMG97HfkEqIG5siFGmMfutmlciRc_CzuJlOByOX53QBREXr-LrDRIqkvzPstBb0Va8N0FFyb3izXNF3t8Hn2HNzisrxWFGboeRqMxschD2ahAYYvu0p_IxhF0ZkI49bnqyW6Vo3z-p7p5GRl3LfwBhzSaqe8JMGNMTwElgLhtLN6ULi6VgUfyOlMprfKfFqbtqenbUFZBqb_YvkLfTE26FCOIoDfRE73sPCJhd0-SUMfKQz-Dm4aCKqtbNl3AhClN4GcdxihSNKDXbEwetdfSjArAe88vhkWo9CXFJgG16mumbCOg899YQmVuGqzOY7JKcIu3htCqm5qwKs5wHuQ9vwKkEx2Lwo4fKm-AULYPbo5VVA1BPKoVKveUDjRbBpN77qvZWb_BdAo2LaTXkLFy-uMMqdeSAIMB4Zo197AIWfB32jvBvY5OtDvfI0DtrQQO19qtkod7R=s96-c",
     "paragraphs": [
       "We're lucky to work with someone who makes us question our decisions, think a little deeper, and occasionally rethink an entire design five minutes before we thought we were done. 😄",
       "You've helped us grow as engineers, but more importantly, you've made the journey interesting.",

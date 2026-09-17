@@ -1,13 +1,15 @@
 // Central asset configuration for Kevin's profile photo
-// Place 'kevin-profile.jpg' or 'kevin-profile.png' inside 'src/assets/' or set an external image URL here.
 import placeholderAvatar from '../assets/kevin-profile-placeholder.svg';
+
+export const KEVIN_DIRECT_PHOTO_URL =
+  'https://lh3.googleusercontent.com/rd-ao/AHP4FtnHWSexC7KKUtDYj1MjIOUs1bOpqPpJOCPXc3jiYZ-nw2uOxax7KmI8xxqE7lowoVoeftu8i64tBMCmouEXlR7jMsMyyM9R41gsTA_3Kd_iFCjJZ69hag3dzpYAOnueSiAcV8jl4nPvVBrYXVBzMQ2_K5P66JJWpNa-5mu8U4yjeSTuKpOY-KXcyciv5dotA_SahjC-NbP6XcZG6iKS4_yalALLv65rwuZedeXE3EIxCfxUJyv59bZctvqq89tzpqVjkzux2Fg96sc_MCS798JXZcsxBlCCWi-JNQ1SCJshi2cQTlpyFZveDq0LSE-dBxusVF8yQnh3tK28RKxkr0SAusCDKW51IHrlpr-Zb8EsiSkUpLK7XgTY0zCVZc6tL6-1EyLfvaeNlTYkMAw8rzuIea7JszrOFlb_K2nno0EqALWIFyA-fsflSdumJFTdU3EAURg1jcVbCxeMuEAgm9jiUMbHeWTY9t_Pbtk6NYDKkbYOlD8J2eUbR_F4RSCn4TytKhYrlJyCUgClD3oIzsZMexBi1TRgE-Ar391DZH9-aVlu88LbHrfz3rdyT10JTF2n1kNVIoK5LvKauDoy8MiXaJ_dUJIOTGQIHwWjCxNQc4DvrWDr1C-BOhKTkEmVRsy6_Ot0sPcieqK8kxRLiz4sNe7mGcnBHjFMG97HfkEqIG5siFGmMfutmlciRc_CzuJlOByOX53QBREXr-LrDRIqkvzPstBb0Va8N0FFyb3izXNF3t8Hn2HNzisrxWFGboeRqMxschD2ahAYYvu0p_IxhF0ZkI49bnqyW6Vo3z-p7p5GRl3LfwBhzSaqe8JMGNMTwElgLhtLN6ULi6VgUfyOlMprfKfFqbtqenbUFZBqb_YvkLfTE26FCOIoDfRE73sPCJhd0-SUMfKQz-Dm4aCKqtbNl3AhClN4GcdxihSNKDXbEwetdfSjArAe88vhkWo9CXFJgG16mumbCOg899YQmVuGqzOY7JKcIu3htCqm5qwKs5wHuQ9vwKkEx2Lwo4fKm-AULYPbo5VVA1BPKoVKveUDjRbBpN77qvZWb_BdAo2LaTXkLFy-uMMqdeSAIMB4Zo197AIWfB32jvBvY5OtDvfI0DtrQQO19qtkod7R=s96-c';
 
 export const DEFAULT_KEVIN_PHOTO = placeholderAvatar;
 
-// You can easily swap this path or point to a local image in src/assets/
+// Resolves photo URL, prioritizing provided customUrl or direct Google profile photo URL
 export const getProfilePhotoUrl = (customUrl?: string): string => {
   if (customUrl && customUrl.trim() !== '') {
     return customUrl;
   }
-  return DEFAULT_KEVIN_PHOTO;
+  return KEVIN_DIRECT_PHOTO_URL || DEFAULT_KEVIN_PHOTO;
 };

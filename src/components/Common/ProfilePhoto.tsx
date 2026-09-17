@@ -67,3 +67,4 @@ export const ProfilePhoto: React.FC<ProfilePhotoProps> = ({
 };
 
 export default ProfilePhoto;
+
